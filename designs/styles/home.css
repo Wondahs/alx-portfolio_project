@@ -151,8 +151,12 @@ section.latest-featured-jobs h3 {
 }
 
 .jobs-header {
-    width: 60%;
+    width: 100%;
     align-self: center;
+}
+
+.jobs-header p {
+    text-align: justify;
 }
 
 .featured-jobs {
@@ -178,6 +182,10 @@ section.latest-featured-jobs h3 {
     flex-direction: row;
     text-align: left;
     align-items: center;
+}
+
+.featured-jobs p {
+    text-align: justify;
 }
 
 .featured-jobs .logo-and-name img {
@@ -300,6 +308,10 @@ section.contact-us {
     width: 90%;
 }
 
+.cta-text {
+    text-align: justify;
+}
+
 @media only screen and (max-width: 900px) {
     .featured-jobs {
         flex-direction: column;
@@ -308,7 +320,7 @@ section.contact-us {
     }
 
     .job-card {
-        width: 70%;
+        width: 80%;
     }
 
     section.contact-us {
