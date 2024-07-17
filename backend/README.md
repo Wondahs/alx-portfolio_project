@@ -7,7 +7,7 @@ JobSync is a backend application designed to manage job listings and user authen
 ## Table of Contents
 
 - [JobSync Backend](#jobsync-backend)
-  - [Overview](#overview)
+  - [Overview][overview]
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Technologies Used](#technologies-used)

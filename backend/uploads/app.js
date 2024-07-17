@@ -10,35 +10,45 @@ const errorHandler = require('../middlewares/errorHandler.js');
 const authRoutes = require('../routes/auth.js');
 const jobRoutes = require('../routes/job.js');
 
-require('../config/passport')(passport);
+/* Initialize database connection */
+connectDB();
+
+/* Passport configuration */
+require('../config/passport');
 
 const app = express();
-
-/* Connect to database */
-connectDB();
 
 /* Middleware */
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
-app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
+
+/* Session configuration */
+app.use(session({
+  secret: process.env.SESSION_SECRET, 
+  resave: true,
+  saveUninitialized: true,
+  cookie: { secure: true, httpOnly: true }
+}));
+
+/* Initialize Passport and session middleware */
 app.use(passport.initialize());
 app.use(passport.session());
-app.use('/uploads', express.static('uploads'));
 
-/* Rate limiting */
-const apiLimiter = rateLimit({
-    windowMs: 10 * 60 * 1000,
-    max: 100
+/* Apply rate limiting */
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, /* 15 minutes */
+  max: 100 /* limit each IP to 100 requests per windowMs */
 });
-app.use('/api/', apiLimiter);
+app.use(limiter);
+
+/* Error handling middleware */
+app.use(errorHandler);
 
 /* Routes */
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
 
-/* Error handler */
-app.use(errorHandler);
-
-const PORT = process.env.PORT || 5000;
+/* Start the server */
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
