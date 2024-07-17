@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require('express');
-const connectDB = require('../config/db.js');
+const morgan = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
+const connectDB = require('../config/db.js');
+const logger = require('./logger.js');
 const errorHandler = require('../middlewares/errorHandler.js');
 const authRoutes = require('../routes/auth.js');
 const jobRoutes = require('../routes/job.js');
@@ -42,13 +44,16 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-/* Error handling middleware */
-app.use(errorHandler);
+/* Setup Morgan to use Winston for HTTP request logging */
+app.use(morgan('combined', { stream: { write: (message) => logger.http(message.trim()) } }));
 
 /* Routes */
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
 
+/* Error handling middleware */
+app.use(errorHandler);
+
 /* Start the server */
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => logger.info(`Server running on port ${PORT}`));

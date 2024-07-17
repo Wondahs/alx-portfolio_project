@@ -3,6 +3,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 const User = require('../models/User.js');
+const logger = require('../uploads/logger.js');
 
 /* Function to handle creating or updating a user based on OAuth profile */
 async function handleOAuthLogin(profile, done, providerIdField) {

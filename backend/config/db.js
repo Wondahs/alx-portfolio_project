@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const logger = require('../uploads/logger.js');
+
 const connectDB = async () => {
     try {
         mongoose.connect(process.env.MONGODB_URI, {
