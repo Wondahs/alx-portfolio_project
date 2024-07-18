@@ -5,6 +5,8 @@ const { initiateResetPassword, completeResetPassword } = require('../controllers
 
 router.post('/register', register);
 router.post('/login', login);
+router.post('/reset-password', initiateResetPassword);
+router.post('/reset-password/complete', completeResetPassword);
 router.get('/google', googleAuth);
 router.get('/google/callback', googleAuthCallback, googleAuthRedirect);
 router.get('/facebook', facebookAuth);
@@ -13,7 +15,6 @@ router.get('/linkedin', linkedinAuth);
 router.get('/linkedin/callback', linkedinAuthCallback, linkedinAuthRedirect);
 router.get('/email', emailAuth);
 router.get('/email/callback', emailAuthCallback, emailAuthRedirect);
-router.post('/reset-password', initiateResetPassword);
-router.post('/reset-password/complete', completeResetPassword);
+
 
 module.exports = router;
