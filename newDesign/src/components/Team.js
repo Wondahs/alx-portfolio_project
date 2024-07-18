@@ -18,7 +18,7 @@ function Team() {
   {
    name: 'Delsa Marasha',
    title: 'Software Developer',
-   bio: '👋 Coding Newbie 🌱 Learning and Growing in Programming 📚 Building Skills One Line at a Time ⚡️ Join me on my Journey to become a Skilled Developer! 🌟',
+   bio: 'Skilled developer with a strong foundation in programming, adept at creating efficient and adaptable applications, and proficient in multiple programming languages and frameworks.',
    image: userIcon,
    email: 'deemarasha77@gmail.com',
    github: 'https://github.com/Dee2002'
