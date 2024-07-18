@@ -158,14 +158,14 @@ footer h4 {
     display: none;
     background-color: var(--primary-color);
     position: absolute;
-    width: 60%;
+    width: 100%;
     top: 50%;
     left: 50%;
     z-index: 3;
     transform: translate(-50%, -50%);
     justify-content: center;
     border-radius: 20px;
-    height: 80%;
+    height: 100%;
     box-shadow: 0 0 50px var(--cta-color);
     transition: fade ease-in-out 1s;
   }
