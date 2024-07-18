@@ -1,6 +1,5 @@
 import React from 'react';
 import TeamMember from './TeamMember'; // Import your TeamMember component
-import userIcon from "../assets/images/icon-github-coloured.svg";
 import wondahsIcon from "../assets/images/Wondahs.jpg";
 import delsaIcon from "../assets/images/delsa.jpg";
 import danIcon from "../assets/images/Dan.jpg";
