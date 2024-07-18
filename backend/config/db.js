@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const logger = require('../uploads/logger.js');
+require('dotenv').config();
 
 const connectDB = async () => {
     try {
@@ -8,8 +9,8 @@ const connectDB = async () => {
             useUnifiedTopology: true,
         });
         console.log('MongoDB connected');
-    } catch (err) {
-        console.error(err.message);
+    } catch (error) {
+        console.error('Database connection failed', error);
         process.exit(1);
     }
 };
