@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+![JobSync](https://github.com/Wondahs/alx-portfolio_project/blob/main/newDesign/src/assets/images/jobsync2.jpg?raw=true)
+
+#
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -79,4 +83,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - [Github](https://github.com/Wondahs)
 ### :boy: Daniel Ene
 - [Github](https://github.com/guyestguygithub001)
-
