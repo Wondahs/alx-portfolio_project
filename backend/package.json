@@ -1,7 +1,13 @@
 {
     "name": "jobsync-backend",
     "version": "1.0.0",
-    "description": "Backend for job board application",
+    "authors":[
+     "Ben Gabriel Isek",
+     "Delsa Marasha",
+     "Wonders Victor",
+     "Daniel Enel"
+  ],
+  "description": "Backend for job board application",
     "main": "./uploads/app.js",
     "scripts": {
         "start": "node ./uploads/app.js",
