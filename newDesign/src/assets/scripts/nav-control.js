@@ -49,8 +49,7 @@ export default function useNavControl(navOpen, navClose) {
     if (window.innerWidth < 900 ) navBar.style.display = 'none';
     navButton.setAttribute('open', 'false');
     navButton.src = navOpen;
-
-
+    document.body.style.overflow = 'visible';
   }, [navOpen]);
 
   useEffect(() => {
