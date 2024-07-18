@@ -75,4 +75,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - [Linkedin](https://www.linkedin.com/in/ben-gabriel-isek-811552176/)
 ### :girl: Delsa Marasha
 - [Github](https://github.com/Dee2002)
+### :man: Wonders Victor
+- [Github](https://github.com/Wondahs)
 
