@@ -1,4 +1,10 @@
-# `JobSync: Connecting You to Your Next Career Move`
+# JobSync
+
+## Connecting You to Your Next Career Move
+
+![JobSync](https://github.com/Wondahs/alx-portfolio_project/blob/main/newDesign/src/assets/images/JobsSync.jpg?raw=true)
+
+#
 
 ## Table of Contents
 1. [Project Overview](#project-overview)

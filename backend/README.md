@@ -1,5 +1,9 @@
 # JobSync Backend
 
+![JobSync](https://github.com/Wondahs/alx-portfolio_project/blob/main/newDesign/src/assets/images/JobSync.jpg?raw=true)
+
+#
+
 ## Overview
 
 JobSync is a backend application designed to manage job listings and user authentication using social login options like Google, Facebook, and LinkedIn. The backend is built with Node.js, Express, and MongoDB.
