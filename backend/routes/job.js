@@ -1,14 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Job = require('../models/Job.js');
-const {
-  createJob,
-  getJobs,
-  getJobById,
-  updateJob,
-  deleteJob,
-  applyJob,
-} = require('../controllers/jobController.js');
+const { createJob, getJobs, getJobById, updateJob, deleteJob, applyJob } = require('../controllers/jobController.js');
 const auth = require('../middlewares/auth.js');
 const upload = require('../middlewares/upload.js');
 

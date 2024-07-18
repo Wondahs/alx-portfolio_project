@@ -1,3 +1,9 @@
+/**
+ * Connects to the MongoDB database using the provided MongoDB URI.
+ * @async
+ * @function connectDB
+ * @throws {Error} If the database connection fails.
+ */
 const mongoose = require('mongoose');
 const logger = require('../uploads/logger.js');
 require('dotenv').config();
