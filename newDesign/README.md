@@ -77,4 +77,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - [Github](https://github.com/Dee2002)
 ### :man: Wonders Victor
 - [Github](https://github.com/Wondahs)
+### :man: Daniel Ene
+- [Github](https://github.com/guyestguygithub001)
 
