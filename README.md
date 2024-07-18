@@ -112,6 +112,5 @@ We welcome contributions to the JobSync project. Please read our contributing gu
 
 (Apache 2.0 for Backend)
 
----
-
 Thank you for your interest in JobSync! For any questions or feedback, please don't hesitate to reach out to our team.
+
