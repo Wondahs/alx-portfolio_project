@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamMember from './TeamMember'; // Import your TeamMember component
-import userIcon from "../assets/images/icon-github-coloured.svg";
 import wondahsIcon from "../assets/images/Wondahs.jpg";
+import delsaIcon from "../assets/images/delsa.jpg";
 import danIcon from "../assets/images/Dan.jpg";
 import isekIcon from "../assets/images/isek7.jpeg"
 
@@ -18,8 +18,8 @@ function Team() {
   {
    name: 'Delsa Marasha',
    title: 'Software Developer',
-   bio: '👋 Coding Newbie 🌱 Learning and Growing in Programming 📚 Building Skills One Line at a Time ⚡️ Join me on my Journey to become a Skilled Developer! 🌟',
-   image: userIcon,
+   bio: 'Skilled developer with a strong foundation in programming, adept at creating efficient and adaptable applications, and proficient in multiple programming languages and frameworks.',
+   image: delsaIcon,
    email: 'deemarasha77@gmail.com',
    github: 'https://github.com/Dee2002'
   },

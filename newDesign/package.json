@@ -1,6 +1,12 @@
 {
   "name": "jobsync",
   "version": "0.1.0",
+  "authors":[
+   "Ben Gabriel Isek",
+   "Delsa Marasha",
+   "Wonders Victor",
+   "Daniel Ene"
+  ],
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
