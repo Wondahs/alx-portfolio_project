@@ -11,12 +11,13 @@ const Login = () => {
         <h2>{location === "/login" ? "Welcome Back" : "Get Started"}</h2>
         <p>Enter your details to {location === "/login" ? "login" : "create an account"}</p>
         <form action="#" method="POST">
-          <div>
+          {(location !== "/login") && (
+            <div>
             <label>Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required />
-          </div>
+          </div>)}
           <div>
-            <label >Email address</label>
+            <label >Email Address</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required />
           </div>
           <div>

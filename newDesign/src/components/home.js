@@ -110,7 +110,7 @@ const LatestFeaturedJobs = () => (
           type: 'Full-time',
           title: 'Software developer - Full Stack',
           salary: '$80,000 per year',
-          description: 'We're seeking a talented Full Stack Developer to join our dynamic team. The ideal candidate will have experience in both front-end and back-end development, with a passion for creating robust, scalable web applications. You'll work on cutting-edge projects and collaborate with a team of experienced developers.',
+          description: 'We\'re seeking a talented Full Stack Developer to join our dynamic team. The ideal candidate will have experience in both front-end and back-end development, with a passion for creating robust, scalable web applications. You'll work on cutting-edge projects and collaborate with a team of experienced developers.',
           skills: ['PHP', 'Database management', 'Django']
         },
         {

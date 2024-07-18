@@ -32,6 +32,7 @@ main {
 
 .signup p {
     font-weight: 400;
+    margin-bottom: 20px;
 }
 .signup input {
     padding: 10px;
