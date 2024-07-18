@@ -73,3 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### :man: Ben Gabriel Isek
 - [Github](https://github.com/Isek7)
 - [Linkedin](https://www.linkedin.com/in/ben-gabriel-isek-811552176/)
+### :girl: Delsa Marasha
+- [Github](https://github.com/Dee2002)
+
