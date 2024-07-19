@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const User = require('../models/User.js');
 const Token = require('../models/Token');
-const sendEmail = require('../utils/sendEmail'); /* Utility function to send emails */
+const sendEmail = require('../utils/sendEmail');
 
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
