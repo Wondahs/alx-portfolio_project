@@ -88,8 +88,8 @@ const Home = () => {
             Whether you're a seasoned professional or just starting your career, these roles provide excellent
             opportunities for growth and development in various tech fields.</p>
         </div>
-        <div className="featured-jobs">
-          <div className="job-card">
+        <div className="featured-jobs-home">
+          <div className="job-card-home">
             <div className="logo-and-name">
               <img src={companyLogo2} alt="Company Logo" />
               <div>
@@ -119,7 +119,7 @@ const Home = () => {
               </span>
             </div>
           </div>
-          <div className="job-card">
+          <div className="job-card-home">
             <div className="logo-and-name">
               <img src={companyLogo1} alt="Company Logo" />
               <div>
@@ -148,7 +148,7 @@ const Home = () => {
               </span>
             </div>
           </div>
-          <div className="job-card">
+          <div className="job-card-home">
             <div className="logo-and-name">
               <img src={companyLogo3} alt="Company Logo" />
               <div>

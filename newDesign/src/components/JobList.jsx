@@ -8,14 +8,15 @@ const JobList = () => {
 
   return (
     <div className="job-list">
+      <h2>Latest Featured Jobs</h2>
       {isPending && <p className="loading">Loading jobs...</p>}
       {error && <p className="error">Error: {error}</p>}
       {jobs && jobs.length > 0 ? (
-        <ul className="job-card-list">
+        <div className="featured-jobs">
           {jobs.map((job) => (
-            <JobCard key={job.id} job={job} />
+            <JobCard key={job.id} job={job} detail={false} location={'list'} />
           ))}
-        </ul>
+        </div>
       ) : (
         <p className="no-results">No jobs found.</p>
       )}

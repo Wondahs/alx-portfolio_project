@@ -1,0 +1,23 @@
+.job-detail {
+    padding: 30px 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-detail button {
+    border: none;
+    padding: 10px 15px;
+    margin-right: auto;
+}
+
+.job-card-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.job-card-detail img,
+.job-card-detail .company-name {
+    margin: 0 auto;
+}
