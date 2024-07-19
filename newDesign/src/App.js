@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import AboutUs from './components/AboutUs';
+import JobList from './components/JobList';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Login />} />
           <Route path='/about' element={<AboutUs />} />
+          <Route path='/joblist' element={<JobList />} />
         </Routes>
         <Footer />
       </div>

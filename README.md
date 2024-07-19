@@ -1,4 +1,10 @@
-# JobSync: Syncing You with Your Next Career Move
+# JobSync
+
+## Connecting You to Your Next Career Move
+
+![JobSync](https://github.com/Wondahs/alx-portfolio_project/blob/main/newDesign/src/assets/images/JobsSync.jpg?raw=true)
+
+#
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -130,4 +136,3 @@ Remember, in the job market jungle, JobSync is your career compass. So buckle up
 
 
 Thank you for your interest in JobSync! For any questions or feedback, please don't hesitate to reach out to our team.
-
