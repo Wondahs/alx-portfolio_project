@@ -2,8 +2,9 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const nodemailer = require('nodemailer');
 const User = require('../models/User.js');
-const Token = require('../models/Token');
+const Token = require('../models/Token.js');
 const sendEmail = require('../utils/sendEmail');
 
 exports.register = async (req, res) => {

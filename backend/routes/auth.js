@@ -21,7 +21,7 @@ const {
 
 router.post('/register', register);
 router.post('/login', login);
-router.post('/reset-password', initiateResetPassword);
+router.post('/reset-password/initiate', initiateResetPassword);
 router.post('/reset-password/complete', completeResetPassword);
 router.get('/google', googleAuth);
 router.get('/google/callback', googleAuthCallback, googleAuthRedirect);
