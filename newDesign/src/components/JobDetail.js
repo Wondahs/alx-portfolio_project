@@ -2,11 +2,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../assets/scripts/useRead";
 import JobCard from "./Jobcard";
 import '../assets/styles/JobDetail.css'
+import { useEffect } from "react";
 
-const JobDetail = () => {
+const JobDetail = ({title}) => {
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   const { id } = useParams();
   const { data: jobs, isPending, error } = useFetch('http://localhost:8000/jobs/' + id);
+
 
   const navigate = useNavigate();
 

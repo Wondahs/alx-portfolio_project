@@ -15,7 +15,7 @@
 
 .job-card-list:hover {
   transition: ease .3s;
-  width: 91%;
+  transform: scale(1.02);
   color: var(--primary-color);
 }
 
@@ -112,9 +112,5 @@
 
   .job-card-list {
       width: 80%;
-  }
-
-  .job-card-list:hover {
-    width: 81%;
   }
 }

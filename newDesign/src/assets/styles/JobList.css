@@ -7,6 +7,9 @@
 .job-list h2 {
   margin: 0;
   margin-bottom: 30px;
+  font-size: 30px;
+  color: #070828;
+  font-weight: 800;
 }
 .featured-jobs {
   display: flex;

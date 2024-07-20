@@ -10,8 +10,13 @@ import phoneIcon from "../assets/images/icon-phone.svg";
 import ctaImage from "../assets/images/large-cta.svg";
 import "../assets/styles/home.css"
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-const Home = () => {
+const Home = ({title}) => {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
   return (
     <main>
       <section className="jobs-company-candidates">
