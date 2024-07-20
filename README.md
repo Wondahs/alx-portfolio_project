@@ -1,6 +1,6 @@
 # JobSync
 
-## Connecting You to Your Next Career Move
+## Syncing You to Your Next Career Move
 
 ![JobSync](https://github.com/Wondahs/alx-portfolio_project/blob/main/newDesign/src/assets/images/JobsSync.jpg?raw=true)
 
