@@ -9,6 +9,7 @@ import webIcon from "../assets/images/icon-website.svg";
 import phoneIcon from "../assets/images/icon-phone.svg";
 import ctaImage from "../assets/images/large-cta.svg";
 import "../assets/styles/home.css"
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -179,11 +180,11 @@ const Home = () => {
           </div>
         </div>
         <div className="browse-more">
-          <a className="browse-more-link" href="/">
+          <Link className="browse-more-link" to="/jobs">
             <button className="browse-more-cta">
               BROWSE MORE
             </button>
-          </a>
+          </Link>
         </div>
       </section>
       <section className="contact-us">
@@ -225,7 +226,7 @@ const Home = () => {
           </div>
         </div>
         <div className="cta-image">
-          <img src={ctaImage} alt="CTA imge" />
+          <Link to={'/signup'}><img src={ctaImage} alt="CTA imge" /></Link>
         </div>
       </section>
     </main>

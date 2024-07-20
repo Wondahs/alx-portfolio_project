@@ -89,7 +89,7 @@ footer a {
 }
 
 footer li {
-  margin-bottom: 20px;
+  margin: 5px;
 }
 
 footer a,
@@ -127,6 +127,10 @@ footer .description {
   text-align: justify;
 }
 
+footer .socials {
+  display: flex;
+  flex-direction: row;
+}
 footer .contact,
 footer .navigation {
   width: 20%;
@@ -219,5 +223,13 @@ footer h4 {
 
   footer ul {
     text-align: center;
+  }
+
+  .contact {
+    margin-top: 0;
+  }
+  
+  .contact h4 {
+    margin-top: 20px;
   }
 }

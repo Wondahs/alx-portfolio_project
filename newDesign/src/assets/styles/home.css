@@ -111,7 +111,7 @@ section.who-we-are h3 {
 section.who-we-are button {
     background-color: var(--primary-color);
     color: white;
-    padding: 0px 15px;
+    padding: 10px 15px;
     border-radius: 5px;
     border: none;
     width: 100%;
@@ -119,6 +119,7 @@ section.who-we-are button {
     flex-direction: row;
     align-items: center;
     margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 section.who-we-are button p {
@@ -156,10 +157,11 @@ section.latest-featured-jobs h3 {
 .jobs-header {
     width: 100%;
     align-self: center;
+    margin-bottom: 20px;
 }
 
 .jobs-header p {
-    text-align: justify;
+    text-align: center;
 }
 
 .featured-jobs-home {
