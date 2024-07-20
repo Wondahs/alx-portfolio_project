@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #070828;
+    --secondary-color: #B2B1FF;
+    --cta-color: #8C8AFF;
+    --tetiary-color: #EBEDF0;
+  }
+
 .job-detail {
     padding: 30px 10%;
     display: flex;
@@ -20,4 +27,30 @@
 .job-card-detail img,
 .job-card-detail .company-name {
     margin: 0 auto;
+}
+
+.job-providers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.job-providers li {
+    color: var(--primary-color);
+}
+
+.job-providers button {
+    display: flex;
+    background-color: var(--cta-color);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: max-content;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.job-card-detail button:hover {
+
 }

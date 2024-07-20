@@ -12,6 +12,19 @@ const JobCard = ({ job, detail, location}) => {
     ));
   };
 
+  const showProviders = (providers) => {
+    return (
+      <ul className="job-providers">
+        <p>Apply via any of the following job providers:</p>
+        {providers.map((provider) => (
+          <li key={provider.jobProvider}>
+            <Link to={provider.url}><button>{provider.jobProvider}</button></Link>
+          </li>
+        ))}
+      </ul>
+    )
+
+  }
   return (
     <div className={"job-card-" + location}>
       <div className="logo-and-name">
@@ -29,6 +42,8 @@ const JobCard = ({ job, detail, location}) => {
         <p>{detail === true ? formatDescription(job.description) : job.description.substring(0, 500) + '...'}</p>
       </div>
       {!detail && <Link to={`/jobs/${job.id}`} className="details-link">See details</Link>}
+      {job && detail && (
+        showProviders(job.jobProviders))}
     </div>
   );
 };
