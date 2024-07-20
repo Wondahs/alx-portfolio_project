@@ -8,6 +8,7 @@ import AboutUs from './components/AboutUs';
 import JobList from './components/JobList';
 import JobDetail from './components/JobDetail';
 
+// Define the main App component
 function App() {
   return (
     <Router>
@@ -28,4 +29,5 @@ function App() {
   );
 }
 
+// Export the App component as the default export
 export default App;
