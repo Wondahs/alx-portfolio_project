@@ -47,6 +47,11 @@ app.use(limiter);
 /* Setup Morgan to use Winston for HTTP request logging */
 app.use(morgan('combined', { stream: { write: (message) => logger.http(message.trim()) } }));
 
+/* Define a route for the root URL */
+app.get('/', (req, res) => {
+  res.send('Welcome to JobSync API');
+});
+
 /* Routes */
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
