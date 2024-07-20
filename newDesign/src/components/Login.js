@@ -1,7 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import "../assets/styles/login.css";
+import { useEffect } from "react";
 
-const Login = () => {
+const Login = ({title}) => {
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   const location = useLocation().pathname;
 

@@ -146,7 +146,6 @@ section.latest-featured-jobs {
     text-align: center;
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
 }
 
 section.latest-featured-jobs h3 {
@@ -168,6 +167,7 @@ section.latest-featured-jobs h3 {
     display: flex;
     flex-direction: row;
     column-gap: 5px;
+    justify-content: center;
 }
 
 .job-card-home {
@@ -175,7 +175,6 @@ section.latest-featured-jobs h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-evenly;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
@@ -184,7 +183,7 @@ section.latest-featured-jobs h3 {
 
 .job-card-home:hover {
     transition: ease .5s;
-    width: 40%;
+    width: 35%;
     color: var(--primary-color);
   }
 

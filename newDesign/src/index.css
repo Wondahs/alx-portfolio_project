@@ -54,6 +54,7 @@ header nav ul li {
 header h1 {
   font-size: 30px;
   margin-right: auto;
+  font-weight: 800;
 }
 
 header a.get-started {
@@ -171,7 +172,7 @@ footer h4 {
     border-radius: 20px;
     height: 100%;
     box-shadow: 0 0 50px var(--cta-color);
-    transition: fade ease-in-out 1s;
+    transition: opacity ease 1s;
   }
 
   header nav ul {

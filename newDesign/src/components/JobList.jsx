@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import JobCard from './Jobcard.jsx';
 import '../assets/styles/JobList.css';
 import useFetch from '../assets/scripts/useRead';
 
-const JobList = () => {
+const JobList = ({title}) => {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
   const { data: jobs, isPending, error } = useFetch('http://localhost:8000/jobs');
 
   return (

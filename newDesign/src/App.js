@@ -15,12 +15,12 @@ function App() {
         <div id="filter"></div>
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Login />} />
-          <Route path='/about' element={<AboutUs />} />
-          <Route path='/jobs' element={<JobList />} />
-          <Route path='/jobs/:id' element={<JobDetail />} />
+          <Route path='/' element={<Home title="JobSync" />} />
+          <Route path='/login' element={<Login title="JobSync - Login"/>} />
+          <Route path='/signup' element={<Login title="JobSync - Signup"/>} />
+          <Route path='/about' element={<AboutUs title="JobSync - About Us" />} />
+          <Route path='/jobs' element={<JobList title="JobSync - Featured Jobs"/>} />
+          <Route path='/jobs/:id' element={<JobDetail title="JobSync - Job Detail"/>} />
         </Routes>
         <Footer />
       </div>
