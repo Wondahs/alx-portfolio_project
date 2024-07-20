@@ -5,7 +5,7 @@
         "Ben Gabriel Isek",
         "Delsa Marasha",
         "Wonders Victor",
-        "Daniel Enel"
+        "Daniel Ene"
     ],
     "description": "Backend for job board application",
     "main": "./uploads/app.js",
