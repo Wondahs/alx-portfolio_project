@@ -39,12 +39,12 @@ const JobListing = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // Search functionality
+  // Search functionality for SearchQuery.
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  // Filtering logic
+  // Filtering logic for module.
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prevFilters) => ({ ...prevFilters, [name]: value }));
