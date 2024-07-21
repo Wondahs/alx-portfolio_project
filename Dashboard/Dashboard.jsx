@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import JobSummary from './JobSummary';  // optional component
+import JobSummary from './JobSummary'; // optional component
 
 function Dashboard() {
   const [jobs, setJobs] = useState([]);
@@ -19,4 +19,11 @@ function Dashboard() {
       <ul>
         {jobs.map((job) => (
           <li key={job.id}>
+            {/* Your content for each job here */}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
