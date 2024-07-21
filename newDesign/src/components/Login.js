@@ -16,6 +16,7 @@ const Login = ({ title, setUserData }) => {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const createUser = async (event) => {
     event.preventDefault();
@@ -37,11 +38,7 @@ const Login = ({ title, setUserData }) => {
         setUserData(data);
         console.log('New User Created Successfully');
         // navigate('/dashboard');
-        return (
-        <Popup>
-          <h1>Account Created Successfully</h1>
-          <button onClick={() => navigate('/login')}>Login Now</button>
-        </Popup>)
+        setIsPopupOpen(true);
       } else {
         console.error("Failed to create user");
         const error = await response.json();
@@ -52,6 +49,11 @@ const Login = ({ title, setUserData }) => {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    navigate('/login');
   }
 
   return (
@@ -81,6 +83,10 @@ const Login = ({ title, setUserData }) => {
           (<p>Already have an account? <Link to='/login'>Login</Link></p>)
         }
       </section>
+      <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
+          <h1>Account Created Successfully</h1>
+          <button onClick={() => closePopup()}>Login Now</button>
+        </Popup>
     </main>
   );
 }

@@ -1,10 +1,11 @@
-import { Children } from "react";
+const Popup = ({isOpen, onClose, children}) => {
 
-const Popup = () => {
+  if (!isOpen) return null;
+
   return (
     <div className="popup-container">
       <div className="popup-body">
-        {Children}
+        {children}
       </div>
     </div>
   );
