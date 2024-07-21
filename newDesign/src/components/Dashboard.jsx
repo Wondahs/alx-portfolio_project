@@ -1,13 +1,15 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Dashboard() {
   const location = useLocation();
-  const { create, response } = location.state || {};
+	const navigate = useNavigate();
+  // const { create, response } = location.state || {};
 
   return (
     <div className="dashboard-content">
-      <h1>{response.ok ? "Success" : "Try again"}</h1>
+      <h1>{"Success"}</h1>
+      <button onClick={() => navigate('/about')}>Navigate</button>
     </div>
   );
 }

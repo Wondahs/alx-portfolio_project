@@ -20,7 +20,7 @@ const Login = ({ title }) => {
     // Create a new user
     const formData = { name, email, password };
     console.log(JSON.stringify(formData));
-    const postUrl = 'http://localhost:5000/api/auth/register';
+    const postUrl = 'http://127.0.0.1:5000/api/auth/register';
 
     try {
       const response = await fetch(postUrl, {
@@ -33,13 +33,11 @@ const Login = ({ title }) => {
 
       console.log(response);
 
-      // navigate('/dashboard', { state: { create: true, response } });
+      navigate('/dashboard');
 
     } catch (error) {
       console.error(error);
     }
-
-    // Redirect to the dashboard
   }
 
   return (
