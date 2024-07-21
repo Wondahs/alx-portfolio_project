@@ -11,7 +11,7 @@ const schema = yup.object({
 function EditProfile() {
   const user = getUserData();
   const [formData, setFormData] = useState(user);
-  const { register, handleSubmit, formState: { errors }, setError } = useForm({
+  const { register, onSubmit, formState: { errors }, setError } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -19,7 +19,7 @@ function EditProfile() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = async (data) => {
+  const handleFormSubmit = async (data) => { // Renamed handleSubmit to handleFormSubmit
     try {
       const response = await fetch('/api/profile', {
         method: 'PUT',
@@ -39,7 +39,7 @@ function EditProfile() {
   return (
     <div className="edit-profile">
       <h2>Edit Profile</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}> {/* Use onSubmit here */}
         <label htmlFor="name">Name:</label>
         <input
           type="text"
