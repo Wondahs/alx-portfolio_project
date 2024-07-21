@@ -128,7 +128,7 @@ Apply, hire, and change the world!
 #🤝 Join the JobSync Revolution
 Got ideas? Found a bug? Want to make JobSync even more awesome? We're all ears! Check out our contribution guidelines and join the party!
 �� The Fine Print
-JobSync is released under the "Don't Be Evil" license. Just kidding, it's [insert actual license here].
+JobSync is released under the "Don't Be Evil" license. Just kidding, it's [Apche].
 
 
 #🌟 The Last Word
