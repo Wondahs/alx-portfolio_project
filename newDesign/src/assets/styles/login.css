@@ -59,6 +59,10 @@ main {
     cursor: pointer;
 }
 
+.signup button:hover {
+    opacity: .6;
+}
+
 .signup a {
     opacity: 1;
     font-weight: 900;

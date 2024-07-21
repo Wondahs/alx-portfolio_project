@@ -16,6 +16,7 @@ const Login = ({ title, setUserData }) => {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [popupMsg, setPopupMsg] = useState('');
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const createUser = async (event) => {
@@ -34,10 +35,8 @@ const Login = ({ title, setUserData }) => {
       })
 
       if (response.ok) {
-        const data = await response.json();
-        setUserData(data);
         console.log('New User Created Successfully');
-        // navigate('/dashboard');
+        setPopupMsg('Account Created Successfully')
         setIsPopupOpen(true);
       } else {
         console.error("Failed to create user");
@@ -56,12 +55,49 @@ const Login = ({ title, setUserData }) => {
     navigate('/login');
   }
 
+  const loginUser = async (event) => {
+    event.preventDefault();
+
+    try {
+      const formData = { email, password };
+      const getUrl = 'http://127.0.0.1:5000/api/auth/login';
+
+      const response = await fetch(getUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        const data = await response.json();
+        setUserData(data);
+
+        navigate('/dashboard');
+      } else {
+        console.error("Failed to login user");
+        const error = await response.json();
+        console.log(error.msg);
+        setPopupMsg(error.msg)
+        setEmailError(error.msg);
+        setIsPopupOpen(true);
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+
+
+
+  }
+
   return (
     <main>
       <section className="signup" id="Login">
         <h2>{location === "/login" ? "Welcome Back" : "Get Started"}</h2>
         <p>Enter your details to {location === "/login" ? "login" : "create an account"}</p>
-        <form onSubmit={(e) => createUser(e)}>
+        <form onSubmit={location === "/login" ? (e) => loginUser(e) : (e) => createUser(e)}>
           {(location !== "/login") && (
             <div>
               <label>Name</label>
@@ -84,9 +120,9 @@ const Login = ({ title, setUserData }) => {
         }
       </section>
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
-          <h1>Account Created Successfully</h1>
-          <button onClick={() => closePopup()}>Login Now</button>
-        </Popup>
+        <h1>{popupMsg}</h1>
+        <button onClick={() => closePopup()}>Login Now</button>
+      </Popup>
     </main>
   );
 }
