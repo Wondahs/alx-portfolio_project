@@ -1,15 +1,16 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-function Dashboard() {
-  const location = useLocation();
-	const navigate = useNavigate();
-  // const { create, response } = location.state || {};
+function Dashboard({ title, userData }) {
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
+  console.log(userData)
 
   return (
     <div className="dashboard-content">
-      <h1>{"Success"}</h1>
-      <button onClick={() => navigate('/about')}>Navigate</button>
+      <h1>Hello There</h1>
     </div>
   );
 }

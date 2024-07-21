@@ -1,8 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../assets/styles/login.css";
 import { useEffect, useState } from "react";
+import Popup from "./Popup";
 
-const Login = ({ title }) => {
+const Login = ({ title, setUserData }) => {
 
   useEffect(() => {
     document.title = title;
@@ -14,12 +15,12 @@ const Login = ({ title }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [emailError, setEmailError] = useState('');
 
   const createUser = async (event) => {
     event.preventDefault();
     // Create a new user
     const formData = { name, email, password };
-    console.log(JSON.stringify(formData));
     const postUrl = 'http://127.0.0.1:5000/api/auth/register';
 
     try {
@@ -31,9 +32,22 @@ const Login = ({ title }) => {
         body: JSON.stringify(formData),
       })
 
-      console.log(response);
-
-      navigate('/dashboard');
+      if (response.ok) {
+        const data = await response.json();
+        setUserData(data);
+        console.log('New User Created Successfully');
+        // navigate('/dashboard');
+        return (
+        <Popup>
+          <h1>Account Created Successfully</h1>
+          <button onClick={() => navigate('/login')}>Login Now</button>
+        </Popup>)
+      } else {
+        console.error("Failed to create user");
+        const error = await response.json();
+        console.log(error.msg);
+        setEmailError(error.msg);
+      }
 
     } catch (error) {
       console.error(error);
@@ -53,8 +67,9 @@ const Login = ({ title }) => {
             </div>)}
           <div>
             <label >Email Address</label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" name="email" placeholder="Enter your email" required />
+            <input className="email-input" value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" name="email" placeholder="Enter your email" required />
           </div>
+          <p className="email-error">{emailError}</p>
           <div>
             <label >Password</label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" placeholder="Enter Password" required />

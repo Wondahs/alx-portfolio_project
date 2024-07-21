@@ -15,9 +15,12 @@ import AboutUs from './components/AboutUs';
 import JobList from './components/JobList';
 import JobDetail from './components/JobDetail';
 import Dashboard from './components/Dashboard';
+import { useState } from 'react';
 
 // Define the main App component
 function App() {
+
+  const [userData, setUserData] = useState(null);
   // Return the JSX structure of the application
   return (
     // Wrap the entire app with the Router component for routing
@@ -33,9 +36,9 @@ function App() {
           {/* Route for the homepage with path '/' and Home component */}
           <Route path="/" element={<Home title="JobSync" />} />
           {/* Route for the login page with path '/login' and Login component */}
-          <Route path="/login" element={<Login title="JobSync - Login" />} />
+          <Route path="/login" element={<Login title="JobSync - Login" setUserData={setUserData} />} />
           {/* Route for the signup page (using the same Login component for now) */}
-          <Route path="/signup" element={<Login title="JobSync - Signup" />} />
+          <Route path="/signup" element={<Login title="JobSync - Signup" setUserData={setUserData} />} />
           {/* Route for the about us page with path '/about' and AboutUs component */}
           <Route path="/about" element={<AboutUs title="JobSync - About Us" />} />
           {/* Route for the jobs listing page with path '/jobs' and JobList component */}
@@ -46,7 +49,7 @@ function App() {
               - The JobDetail component is rendered with the title "JobSync - Job Detail"
           */}
           <Route path="/jobs/:id" element={<JobDetail title="JobSync - Job Detail" />} />
-          <Route path="/dashboard" element={<Dashboard tltle="Dashboard"/>} />
+          <Route path="/dashboard" element={<Dashboard tltle="Dashboard"  userData={userData}/>} />
         </Routes>
 
         {/* Render the Footer component at the bottom */}
