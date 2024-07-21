@@ -14,6 +14,7 @@ import Login from './components/Login';
 import AboutUs from './components/AboutUs';
 import JobList from './components/JobList';
 import JobDetail from './components/JobDetail';
+import Dashboard from './components/Dashboard';
 
 // Define the main App component
 function App() {
@@ -45,6 +46,7 @@ function App() {
               - The JobDetail component is rendered with the title "JobSync - Job Detail"
           */}
           <Route path="/jobs/:id" element={<JobDetail title="JobSync - Job Detail" />} />
+          <Route path="/dashboard" element={<Dashboard tltle="Dashboard"/>} />
         </Routes>
 
         {/* Render the Footer component at the bottom */}

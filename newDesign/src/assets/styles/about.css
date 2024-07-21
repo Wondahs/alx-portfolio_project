@@ -12,18 +12,19 @@
 .hero {
     text-align: center;
     margin-bottom: 0;
-    padding-top: 0;
+    padding-top: 30px;
     padding-bottom: 0;
 }
 
 .hero h1 {
     color: var(--primary-color);
     font-size: 40px;
+    font-weight: 700;
     margin-bottom: 0;
 }
 
 .hero svg {
-    margin: 0;
+    margin: 0 auto;
 }
 
 .hero p {
@@ -33,7 +34,7 @@
 
 .about-us-text {
     text-align: justify;
-    padding-bottom: 0;
+    padding-bottom: 35px;
 }
 
 .team {
@@ -45,13 +46,15 @@
 .team h2 {
     color: var(--primary-color);
     font-size: 40px;
+    font-weight: 700;
 }
 
 .team-member-card {
     background-color: white;
+    width: 45%;
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 20px auto;
     align-items: center;
     padding: 30px;
@@ -74,7 +77,7 @@
 
 .description {
     text-align: center;
-    width: 55%;
+    width: 90%;
     margin-left: 10px;
 }
 
@@ -89,6 +92,8 @@
 }
 
 .socials {
+    display: flex;
+    flex-direction: row;
     margin: 0;
 }
 .socials img {
@@ -100,12 +105,17 @@
     font-weight: 400;
     opacity: .5;
     margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 
 .name-icon h3 span {
     color: var(--cta-color);
     font-weight: 700;
     opacity: 1;
+    margin-right: 7px;
 }
 
 .member-icon {
@@ -117,8 +127,19 @@
     margin-bottom: 5px;
 }
 
+.team-members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 900px) {
     .team-member-card {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .team-members {
         flex-direction: column;
     }
 

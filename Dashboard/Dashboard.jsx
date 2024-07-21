@@ -1,17 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import JobSummary from './JobSummary'; // optional component
+import JobSummary from './JobSummary';  // optional component
 
 function Dashboard() {
-  const [jobs, setJobs] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedJobs = await getJobListings();
-      setJobs(fetchedJobs);
-    };
-    fetchData();
-  }, []);
+  const location = 
+  const {response} = location.state
 
   return (
     <div className="dashboard-content">
@@ -19,11 +12,4 @@ function Dashboard() {
       <ul>
         {jobs.map((job) => (
           <li key={job.id}>
-            {/* Your content for each job here */}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
