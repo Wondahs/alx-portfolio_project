@@ -54,6 +54,7 @@ header nav ul li {
 header h1 {
   font-size: 30px;
   margin-right: auto;
+  font-weight: 800;
 }
 
 header a.get-started {
@@ -89,7 +90,7 @@ footer a {
 }
 
 footer li {
-  margin-bottom: 20px;
+  margin: 5px;
 }
 
 footer a,
@@ -127,6 +128,10 @@ footer .description {
   text-align: justify;
 }
 
+footer .socials {
+  display: flex;
+  flex-direction: row;
+}
 footer .contact,
 footer .navigation {
   width: 20%;
@@ -167,7 +172,7 @@ footer h4 {
     border-radius: 20px;
     height: 100%;
     box-shadow: 0 0 50px var(--cta-color);
-    transition: fade ease-in-out 1s;
+    transition: opacity ease 1s;
   }
 
   header nav ul {
@@ -219,5 +224,13 @@ footer h4 {
 
   footer ul {
     text-align: center;
+  }
+
+  .contact {
+    margin-top: 0;
+  }
+  
+  .contact h4 {
+    margin-top: 20px;
   }
 }

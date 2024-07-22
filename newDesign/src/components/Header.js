@@ -10,7 +10,7 @@ const Header = () => {
   useNavControl(openNav, closeNav);
   return (
     <header className="header">
-      <h1 id="company-name">Job sync</h1>
+      <h1 id="company-name">Job Sync</h1>
       <Navbar />
       <Link className="get-started" to="/signup">
         <button id="get-started-cta">Get Started</button>

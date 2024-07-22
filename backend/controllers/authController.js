@@ -2,9 +2,10 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const nodemailer = require('nodemailer');
 const User = require('../models/User.js');
-const Token = require('../models/Token');
-const sendEmail = require('../utils/sendEmail'); /* Utility function to send emails */
+const Token = require('../models/Token.js');
+const sendEmail = require('../utils/sendEmail');
 
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
@@ -33,11 +34,11 @@ exports.login = async (req, res) => {
     try {
         let user = await User.findOne({ email });
         if (!user) {
-            return res.status(400).json({ msg: 'Invalid credentials' });
+            return res.status(400).json({ msg: 'Invalid Email' });
         }
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(400).json({ msg: 'Invalid credentials' });
+            return res.status(400).json({ msg: 'Invalid Password' });
         }
         const payload = { user: { id: user.id } };
         jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 360000 }, (err, token) => {

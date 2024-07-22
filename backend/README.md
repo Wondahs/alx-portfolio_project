@@ -11,7 +11,7 @@ JobSync is a backend application designed to manage job listings and user authen
 ## Table of Contents
 
 - [JobSync Backend](#jobsync-backend)
-  - [Overview][overview]
+  - [Overview](#overview)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
@@ -61,6 +61,7 @@ This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE
 - [Linkedin](https://www.linkedin.com/in/ben-gabriel-isek-811552176/)
 ### :woman: Delsa Marasha
 - [Github](https://github.com/Dee2002)
+- [Linkedin](https://www.linkedin.com/in/delsa-marasha/)
 ### :man: Wonders Victor
 - [Github](https://github.com/Wondahs)
 ### :man: Daniel Ene

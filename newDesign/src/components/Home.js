@@ -9,8 +9,14 @@ import webIcon from "../assets/images/icon-website.svg";
 import phoneIcon from "../assets/images/icon-phone.svg";
 import ctaImage from "../assets/images/large-cta.svg";
 import "../assets/styles/home.css"
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-const Home = () => {
+const Home = ({title}) => {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
   return (
     <main>
       <section className="jobs-company-candidates">
@@ -88,8 +94,8 @@ const Home = () => {
             Whether you're a seasoned professional or just starting your career, these roles provide excellent
             opportunities for growth and development in various tech fields.</p>
         </div>
-        <div className="featured-jobs">
-          <div className="job-card">
+        <div className="featured-jobs-home">
+          <div className="job-card-home">
             <div className="logo-and-name">
               <img src={companyLogo2} alt="Company Logo" />
               <div>
@@ -119,7 +125,7 @@ const Home = () => {
               </span>
             </div>
           </div>
-          <div className="job-card">
+          <div className="job-card-home">
             <div className="logo-and-name">
               <img src={companyLogo1} alt="Company Logo" />
               <div>
@@ -148,7 +154,7 @@ const Home = () => {
               </span>
             </div>
           </div>
-          <div className="job-card">
+          <div className="job-card-home">
             <div className="logo-and-name">
               <img src={companyLogo3} alt="Company Logo" />
               <div>
@@ -179,11 +185,11 @@ const Home = () => {
           </div>
         </div>
         <div className="browse-more">
-          <a className="browse-more-link" href="/">
+          <Link className="browse-more-link" to="/jobs">
             <button className="browse-more-cta">
               BROWSE MORE
             </button>
-          </a>
+          </Link>
         </div>
       </section>
       <section className="contact-us">
@@ -225,7 +231,7 @@ const Home = () => {
           </div>
         </div>
         <div className="cta-image">
-          <img src={ctaImage} alt="CTA imge" />
+          <Link to={'/signup'}><img src={ctaImage} alt="CTA imge" /></Link>
         </div>
       </section>
     </main>

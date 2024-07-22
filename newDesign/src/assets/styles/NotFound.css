@@ -1,0 +1,14 @@
+.not-found {
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    color: #070828;
+    width: 80%;
+    margin: auto;
+}
+
+.not-found p {
+    margin: 0;
+    padding-bottom: 10px;
+    opacity: .8;
+}

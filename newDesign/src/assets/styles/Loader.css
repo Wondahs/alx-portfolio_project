@@ -1,0 +1,33 @@
+.loading-div {
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loader {
+	border: 10px solid gray;
+	border-top: 10px #070828 solid;
+	margin: auto;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+		border-top-color: #070828;
+	}
+	33% {
+		border-top-color: aqua;
+	}
+	66% {
+		border-top-color: pink;
+	}
+	100% {
+		transform: rotate(360deg);
+		border-top-color: greenyellow;
+	}
+}

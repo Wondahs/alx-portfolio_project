@@ -1,0 +1,55 @@
+.job-list {
+  border: 0;
+  padding: 30px 10%;
+  background-color: #ebedf0;
+}
+
+.job-list h2 {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: #070828;
+  font-weight: 800;
+}
+.featured-jobs {
+  display: flex;
+  flex-direction: column;
+  column-gap: 5px;
+  background-color: #ebedf0;
+  padding: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading,
+.error,
+.no-results {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.loading {
+  font-style: italic;
+}
+
+.error {
+  color: red;
+}
+
+.no-results {
+  font-weight: bold;
+}
+
+.job-list .login-signup {
+  color: #070828;
+  opacity: .7;
+  font-size: 20px;
+  padding: 50px 0;
+}
+
+.job-list .login-signup a {
+  text-decoration: none;
+  color: #8C8AFF;
+  font-weight: 800;
+}

@@ -9,6 +9,8 @@ const UserSchema = new mongoose.Schema({
     facebookId: { type: String },
     linkedinId: { type: String },
     createdAt: { type: Date, default: Date.now },
+    savedJobs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Job' }],
+    appliedJobs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Job' }]
 });
 
 /* Password hashing middleware */

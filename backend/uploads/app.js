@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 const connectDB = require('../config/db.js');
+const MongoStore = require('connect-mongo');
 const logger = require('./logger.js');
 const errorHandler = require('../middlewares/errorHandler.js');
 const authRoutes = require('../routes/auth.js');
@@ -27,10 +28,14 @@ app.use(cors());
 
 /* Session configuration */
 app.use(session({
-  secret: process.env.SESSION_SECRET, 
-  resave: true,
-  saveUninitialized: true,
-  cookie: { secure: true, httpOnly: true }
+  secret: process.env.SESSION_SECRET,
+  resave: false, /* Only save sessions if modified */
+  saveUninitialized: false, /* Don't save uninitialized sessions */
+  store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+  }
 }));
 
 /* Initialize Passport and session middleware */
@@ -46,6 +51,11 @@ app.use(limiter);
 
 /* Setup Morgan to use Winston for HTTP request logging */
 app.use(morgan('combined', { stream: { write: (message) => logger.http(message.trim()) } }));
+
+/* Define a route for the root URL */
+app.get('/', (req, res) => {
+  res.send('Welcome to JobSync API');
+});
 
 /* Routes */
 app.use('/api/auth', authRoutes);

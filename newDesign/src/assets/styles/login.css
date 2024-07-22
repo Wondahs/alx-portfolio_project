@@ -59,11 +59,25 @@ main {
     cursor: pointer;
 }
 
+.signup button:hover {
+    opacity: .6;
+}
+
 .signup a {
     opacity: 1;
     font-weight: 900;
 }
 
+.signup input.email-input {
+    margin-bottom: 0;
+}
+.email-error {
+    color: red;
+    font-size: 10px;
+    opacity: .8;
+    margin: 0;
+    text-align: left;
+}
 @media only screen and (max-width: 900px) {
     .signup {
         min-width: 60%;

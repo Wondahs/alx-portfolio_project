@@ -5,6 +5,7 @@
  * @throws {Error} If the database connection fails.
  */
 const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo');
 const logger = require('../uploads/logger.js');
 require('dotenv').config();
 
