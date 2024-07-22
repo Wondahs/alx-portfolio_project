@@ -30,7 +30,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET, 
   resave: true,
   saveUninitialized: true,
-  cookie: { secure: true, httpOnly: true }
+  cookie: { secure: process.env.NODE_ENV === 'production', httpOnly: true }
 }));
 
 /* Initialize Passport and session middleware */
@@ -39,8 +39,8 @@ app.use(passport.session());
 
 /* Apply rate limiting */
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, /* 15 minutes */
-  max: 100 /* limit each IP to 100 requests per windowMs */
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
 });
 app.use(limiter);
 
