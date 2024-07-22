@@ -16,6 +16,7 @@ import JobList from './components/JobList';
 import JobDetail from './components/JobDetail';
 import Dashboard from './components/Dashboard';
 import { useState } from 'react';
+import Notfound from './components/NotFound';
 
 // Define the main App component
 function App() {
@@ -43,7 +44,7 @@ function App() {
           {/* Route for the about us page with path '/about' and AboutUs component */}
           <Route path="/about" element={<AboutUs title="JobSync - About Us" />} />
           {/* Route for the jobs listing page with path '/jobs' and JobList component */}
-          <Route path="/jobs" element={<JobList title="JobSync - Featured Jobs" />} />
+          <Route path="/jobs" element={<JobList title="JobSync - Featured Jobs" loggedIn={loggedIn} />} />
           {/* 
               Route for individual job details with path '/jobs/:id'
               - ':id' is a dynamic parameter that captures the job ID from the URL
@@ -51,6 +52,7 @@ function App() {
           */}
           <Route path="/jobs/:id" element={<JobDetail title="JobSync - Job Detail" />} />
           <Route path="/dashboard" element={<Dashboard tltle="Dashboard" loggedIn={loggedIn} userData={userData} />} />
+          <Route path="*" element={<Notfound title="Not Found" />} />
         </Routes>
 
         {/* Render the Footer component at the bottom */}
