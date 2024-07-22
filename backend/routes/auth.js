@@ -56,4 +56,10 @@ router.post('/reset-password/complete', completeResetPassword);
 router.get('/email', emailAuth);
 router.get('/email/callback', emailAuthCallback, emailAuthRedirect);
 
+/* Logout route (GET) */
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/login');
+});
+
 module.exports = router;
