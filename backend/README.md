@@ -1,4 +1,4 @@
-# JobSync Backend
+# `JobSync Backend`
 
 ![JobSync](https://github.com/Wondahs/alx-portfolio_project/blob/main/newDesign/src/assets/images/JobSync.jpg?raw=true)
 
