@@ -7,7 +7,16 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 const Job = require('../models/Job.js');
-const { createJob, getJobs, getJobById, updateJob, deleteJob, applyJob } = require('../controllers/jobController.js');
+const { 
+  createJob, 
+  getJobs, 
+  getJobById, 
+  updateJob, 
+  deleteJob, 
+  applyJob, 
+  getSavedJobs, 
+  getAppliedJobs 
+} = require('../controllers/jobController.js');
 const auth = require('../middlewares/auth.js');
 const upload = require('../middlewares/upload.js');
 
@@ -122,5 +131,23 @@ router.delete('/:id', auth, deleteJob);
  * @returns {void}
  */
 router.post('/apply/:id', auth, applyJob);
+
+/**
+ * GET /jobs/saved - Get saved jobs for the authenticated user.
+ * @route GET /jobs/saved
+ * @param {object} req - The request object.
+ * @param {object} res - The response object.
+ * @returns {void}
+ */
+router.get('/saved', auth, getSavedJobs);
+
+/**
+ * GET /jobs/applied - Get applied jobs for the authenticated user.
+ * @route GET /jobs/applied
+ * @param {object} req - The request object.
+ * @param {object} res - The response object.
+ * @returns {void}
+ */
+router.get('/applied', auth, getAppliedJobs);
 
 module.exports = router;
