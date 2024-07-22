@@ -3,7 +3,7 @@ import "../assets/styles/login.css";
 import { useEffect, useState } from "react";
 import Popup from "./Popup";
 
-const Login = ({ title, setUserData }) => {
+const Login = ({ title, setUserData, setLoggedIn }) => {
   const navigate = useNavigate();
   const location = useLocation().pathname;
   const [email, setEmail] = useState('');
@@ -13,7 +13,6 @@ const Login = ({ title, setUserData }) => {
   const [popupMsg, setPopupMsg] = useState('');
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [accountCreated, setAccountCreated] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
 
 
   useEffect(() => {
@@ -24,7 +23,7 @@ const Login = ({ title, setUserData }) => {
     setPassword('');
     setAccountCreated(false);
     setLoggedIn(false);
-  }, [title]);
+  }, [title, setLoggedIn]);
 
   const createUser = async (event) => {
     event.preventDefault();
@@ -45,7 +44,11 @@ const Login = ({ title, setUserData }) => {
 
       if (response.ok) {
         console.log('New User Created Successfully');
-        setPopupMsg('Account Created Successfully');
+        setPopupMsg(
+          <>
+            <h1>Account Created Successfully</h1>
+            <p>Login Now</p>
+          </>);
         setAccountCreated(true);
         setIsPopupOpen(true);
       } else {
@@ -93,7 +96,12 @@ const Login = ({ title, setUserData }) => {
         console.error("Failed to login user");
         const error = await response.json();
         console.log(error.msg);
-        setPopupMsg(error.msg)
+        setPopupMsg(
+          <>
+            <h1>Login Unsuccessful</h1>
+            <p>{error.msg}</p>
+          </>
+        )
         setEmailError(error.msg);
         setIsPopupOpen(true);
       }
@@ -101,9 +109,6 @@ const Login = ({ title, setUserData }) => {
     } catch (error) {
       console.log(error)
     }
-
-
-
   }
 
   return (
@@ -134,7 +139,7 @@ const Login = ({ title, setUserData }) => {
         }
       </section>
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
-        <h1>{popupMsg}</h1>
+        {popupMsg}
         <button onClick={() => closePopup()}>Close</button>
       </Popup>
     </main>
