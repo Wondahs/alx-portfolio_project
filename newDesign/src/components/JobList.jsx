@@ -3,6 +3,7 @@ import JobCard from './Jobcard.jsx';
 import '../assets/styles/JobList.css';
 import useFetch from '../assets/scripts/useRead';
 import { Link } from 'react-router-dom';
+import Loader from './Loader.js';
 
 const JobList = ({ title, loggedIn }) => {
 
@@ -18,7 +19,7 @@ const JobList = ({ title, loggedIn }) => {
       {loggedIn ? (
         <>
           <h2>Latest Featured Jobs</h2>
-          {isPending && <p className="loading">Loading jobs...</p>}
+          {isPending && <Loader className="loading-div"></Loader>}
           {error && <p className="error">Error Fetching Data: {error}</p>}
           {jobs && jobs.length > 0 ? (
             <div className="featured-jobs">
