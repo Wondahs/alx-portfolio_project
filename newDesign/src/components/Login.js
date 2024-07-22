@@ -4,13 +4,7 @@ import { useEffect, useState } from "react";
 import Popup from "./Popup";
 
 const Login = ({ title, setUserData }) => {
-
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
-
   const navigate = useNavigate();
-
   const location = useLocation().pathname;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,9 +12,24 @@ const Login = ({ title, setUserData }) => {
   const [emailError, setEmailError] = useState('');
   const [popupMsg, setPopupMsg] = useState('');
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [accountCreated, setAccountCreated] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+
+  useEffect(() => {
+    document.title = title;
+    setEmail('');
+    setEmailError('');
+    setName('');
+    setPassword('');
+    setAccountCreated(false);
+    setLoggedIn(false);
+  }, [title]);
 
   const createUser = async (event) => {
     event.preventDefault();
+    setEmailError('');
+    setAccountCreated(false);
     // Create a new user
     const formData = { name, email, password };
     const postUrl = 'http://127.0.0.1:5000/api/auth/register';
@@ -36,7 +45,8 @@ const Login = ({ title, setUserData }) => {
 
       if (response.ok) {
         console.log('New User Created Successfully');
-        setPopupMsg('Account Created Successfully')
+        setPopupMsg('Account Created Successfully');
+        setAccountCreated(true);
         setIsPopupOpen(true);
       } else {
         console.error("Failed to create user");
@@ -47,16 +57,20 @@ const Login = ({ title, setUserData }) => {
 
     } catch (error) {
       console.error(error);
+      setPopupMsg('An Error Occurred');
+      setIsPopupOpen(true);
     }
   }
 
   const closePopup = () => {
     setIsPopupOpen(false);
-    navigate('/login');
+    setEmailError('');
+    accountCreated && navigate('/login');
   }
 
   const loginUser = async (event) => {
     event.preventDefault();
+    setLoggedIn(false);
 
     try {
       const formData = { email, password };
@@ -73,7 +87,7 @@ const Login = ({ title, setUserData }) => {
       if (response.ok) {
         const data = await response.json();
         setUserData(data);
-
+        setLoggedIn(true);
         navigate('/dashboard');
       } else {
         console.error("Failed to login user");
@@ -121,7 +135,7 @@ const Login = ({ title, setUserData }) => {
       </section>
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
         <h1>{popupMsg}</h1>
-        <button onClick={() => closePopup()}>Login Now</button>
+        <button onClick={() => closePopup()}>Close</button>
       </Popup>
     </main>
   );
