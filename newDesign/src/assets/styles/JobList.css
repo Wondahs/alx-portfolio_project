@@ -40,3 +40,16 @@
 .no-results {
   font-weight: bold;
 }
+
+.job-list .login-signup {
+  color: #070828;
+  opacity: .7;
+  font-size: 20px;
+  padding: 50px 0;
+}
+
+.job-list .login-signup a {
+  text-decoration: none;
+  color: #8C8AFF;
+  font-weight: 800;
+}

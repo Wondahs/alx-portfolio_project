@@ -60,7 +60,7 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
 
     } catch (error) {
       console.error(error);
-      setPopupMsg('An Error Occurred');
+      setPopupMsg(<h1>An Error Occurred</h1>);
       setIsPopupOpen(true);
     }
   }

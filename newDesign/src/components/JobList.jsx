@@ -2,28 +2,37 @@ import React, { useEffect } from 'react';
 import JobCard from './Jobcard.jsx';
 import '../assets/styles/JobList.css';
 import useFetch from '../assets/scripts/useRead';
+import { Link } from 'react-router-dom';
 
-const JobList = ({title}) => {
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
+const JobList = ({ title, loggedIn }) => {
 
   const { data: jobs, isPending, error } = useFetch('http://localhost:8000/jobs');
 
+  useEffect(() => {
+    document.title = title;
+  }, [title, loggedIn]);
+
+
   return (
     <div className="job-list">
-      <h2>Latest Featured Jobs</h2>
-      {isPending && <p className="loading">Loading jobs...</p>}
-      {error && <p className="error">Error: {error}</p>}
-      {jobs && jobs.length > 0 ? (
-        <div className="featured-jobs">
-          {jobs.map((job) => (
-            <JobCard key={job.id} job={job} detail={false} location={'list'} />
-          ))}
-        </div>
-      ) : (
-        <p className="no-results">No jobs found.</p>
-      )}
+      {loggedIn ? (
+        <>
+          <h2>Latest Featured Jobs</h2>
+          {isPending && <p className="loading">Loading jobs...</p>}
+          {error && <p className="error">Error Fetching Data: {error}</p>}
+          {jobs && jobs.length > 0 ? (
+            <div className="featured-jobs">
+              {jobs.map((job) => (
+                <JobCard key={job.id} job={job} detail={false} location={'list'} />
+              ))}
+            </div>
+          ) : (
+            <p className="no-results">No jobs found.</p>
+          )}
+        </>) :
+        <p className='login-signup'>
+          <Link to='/login'>Login</Link> or <Link to='/signup'>Sign up</Link> to Continue
+        </p>}
     </div>
   );
 };
