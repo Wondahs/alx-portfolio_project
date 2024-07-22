@@ -54,25 +54,25 @@ exports.login = async (req, res) => {
 exports.googleAuth = passport.authenticate('google', { scope: ['profile', 'email'] });
 exports.googleAuthCallback = passport.authenticate('google', { failureRedirect: '/' });
 exports.googleAuthRedirect = (req, res) => {
-    res.redirect('/Dashboard');
+    res.redirect('/dashboard');
 };
 
 exports.facebookAuth = passport.authenticate('facebook', { scope: ['email'] });
 exports.facebookAuthCallback = passport.authenticate('facebook', { failureRedirect: '/' });
 exports.facebookAuthRedirect = (req, res) => {
-    res.redirect('/Dashboard');
+    res.redirect('/dashboard');
 };
 
 exports.linkedinAuth = passport.authenticate('linkedin');
 exports.linkedinAuthCallback = passport.authenticate('linkedin', { failureRedirect: '/' });
 exports.linkedinAuthRedirect = (req, res) => {
-    res.redirect('/Dashboard');
+    res.redirect('/dashboard');
 };
 
 exports.emailAuth = passport.authenticate('email', { scope: ['email'] });
 exports.emailAuthCallback = passport.authenticate('email', { failureRedirect: '/' });
 exports.emailAuthRedirect = (req, res) => {
-    res.redirect('/Dashboard');
+    res.redirect('/dashboard');
 };
 
 /* Initiate password reset */
