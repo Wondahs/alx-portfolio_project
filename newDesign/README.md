@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Create React App..
 
 ![JobSync](https://github.com/Wondahs/alx-portfolio_project/blob/main/newDesign/src/assets/images/jobsync2.jpg?raw=true)
 
