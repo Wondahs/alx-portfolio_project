@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../assets/styles/login.css";
 import { useEffect, useState } from "react";
 import Popup from "./Popup";
+import Loader from "./Loader";
 
 const Login = ({ title, setUserData, setLoggedIn }) => {
   const navigate = useNavigate();
@@ -29,6 +30,11 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
     event.preventDefault();
     setEmailError('');
     setAccountCreated(false);
+    setPopupMsg(
+      <>
+        <Loader className="loading-div"></Loader>
+      </>);
+    setIsPopupOpen(true);
     // Create a new user
     const formData = { name, email, password };
     const postUrl = 'http://127.0.0.1:5000/api/auth/register';
@@ -48,19 +54,30 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
           <>
             <h1>Account Created Successfully</h1>
             <p>Login Now</p>
+            <button onClick={() => closePopup()}>Close</button>
           </>);
         setAccountCreated(true);
         setIsPopupOpen(true);
+
       } else {
         console.error("Failed to create user");
         const error = await response.json();
         console.log(error.msg);
-        setEmailError(error.msg);
+        setPopupMsg(
+          <>
+            <h1>Error Creating Account</h1>
+            <p>{error.msg}</p>
+            <button onClick={() => closePopup()}>Close</button>
+          </>);
       }
 
     } catch (error) {
       console.error(error);
-      setPopupMsg(<h1>An Error Occurred</h1>);
+      setPopupMsg(
+        <>
+          <h1>An Error Occurred</h1>
+          <button onClick={() => closePopup()}>Close</button>
+        </>);
       setIsPopupOpen(true);
     }
   }
@@ -74,6 +91,12 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
   const loginUser = async (event) => {
     event.preventDefault();
     setLoggedIn(false);
+    setEmailError('');
+    setPopupMsg(
+      <>
+        <Loader className="loading-div"></Loader>
+      </>);
+    setIsPopupOpen(true);
 
     try {
       const formData = { email, password };
@@ -100,6 +123,7 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
           <>
             <h1>Login Unsuccessful</h1>
             <p>{error.msg}</p>
+            <button onClick={() => closePopup()}>Close</button>
           </>
         )
         setEmailError(error.msg);
@@ -140,7 +164,6 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
       </section>
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
         {popupMsg}
-        <button onClick={() => closePopup()}>Close</button>
       </Popup>
     </main>
   );

@@ -9,7 +9,8 @@ const useFetch = (url) => {
     const abortController = new AbortController();
 
     setIsPending(true);
-    fetch(url, { signal: abortController.signal })
+    setTimeout(() => {
+      fetch(url, { signal: abortController.signal })
       .then(res => {
         if (!res.ok) {
           setIsPending(false);
@@ -31,7 +32,7 @@ const useFetch = (url) => {
           setData(null);
         }
       });
-
+    }, 1000);
     return () => abortController.abort();
   }, [url]);
 
