@@ -99,6 +99,10 @@ header nav ul li:hover {
 
 header h1 {
   font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   margin-right: auto;
   margin-left: 0;
   color: white;
@@ -107,6 +111,7 @@ header h1 {
 }
 
 header h1 img {
+  width: 25px;
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .3));
 }
 

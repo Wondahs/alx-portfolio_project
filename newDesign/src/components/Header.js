@@ -11,9 +11,7 @@ const Header = ({ loggedIn }) => {
   useNavControl(openNav, closeNav, loggedIn);
   return (
     <header className="header">
-      <h1 id="company-name"><Link to={'/'}>
-      <img src={logo} alt="JobSync Logo" />  <span>JobSync</span>
-      </Link></h1>
+      <h1 id="company-name"><Link to={'/'}>JobSync</Link></h1>
       <Navbar loggedIn={loggedIn} />
       {!loggedIn && <Link className="get-started" to="/signup">
         <button id="get-started-cta">Get Started</button>
