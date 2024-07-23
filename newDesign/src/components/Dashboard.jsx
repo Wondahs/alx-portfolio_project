@@ -1,32 +1,74 @@
-import React, { useEffect } from 'react';
-import FetchHelper from '../assets/scripts/fetchHelper';
+import React, { useEffect, useState } from 'react';
 import '../assets/styles/Dashboard.css';
+import FetchHelper from '../assets/scripts/fetchHelper';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Dashboard({ title, userData }) {
+function Dashboard({ title, userData, setLoggedIn, loggedIn }) {
+
+  let userDataSes = userData || sessionStorage.getItem('userData');
+  const [userJobs, setUserJobs] = useState(null);
+  const navigate = useNavigate();
+
+  const { name, appliedJobs } = userDataSes;
 
   useEffect(() => {
     document.title = title;
-  }, [title]);
+    FetchHelper.fetchItemsData('http://localhost:8000/jobs', appliedJobs)
+      .then(response => {
+        setUserJobs(response)
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }, [title, appliedJobs]);
 
-  console.log(userData)
-  const {id, name, postedJobs, appliedJobs} = userData;
+
+  console.log(userDataSes);
+  console.log(userJobs);
+
+  const logout = () => {
+    sessionStorage.removeItem('userData');
+    setLoggedIn(false);
+    navigate('/');
+  }
 
   return (
     <div className="dashboard-content">
-      <h1>Hello, {name}</h1>
-      <p>Here are your posted jobs</p>
-      <ul>
-        {postedJobs.map((job, index) => (
-          <li key={index}>Id: {job}</li>
-        ))}
-      </ul>
-
-      <p>Here are your applied jobs</p>
-      <ul>
-        {appliedJobs.map((job, index) => (
-          <li key={index}>Id: {job}</li>
-        ))}
-      </ul>
+      {loggedIn ?
+        (<>
+          <div className='welcome-logout'>
+            <h2 className='welcome-back'>Welcome Back, {name.split(' ')[0]}</h2>
+            <button onClick={logout}>Logout</button>
+          </div>
+          <div className='applications'>
+            <h3>Your Applications</h3>
+            <h4>{appliedJobs.length}</h4>
+            <p>Jobs so far.</p>
+          </div>
+          <div className="recent-applications">
+            <h3>Recent Applications</h3>
+            {userJobs ? (
+              <ul>
+                {userJobs.map((job) => (
+                  <li key={job.id}>
+                    <Link to={`/jobs/${job.id}`}>
+                      <p className='title'>{job.title}</p>
+                      <p className='company'>{job.company}</p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>) : (
+              <p>No recent applications found.</p>
+            )}
+          </div>
+          <div className="apply-btn">
+            <Link to="/jobs"><button>See Latest Jobs</button></Link>
+          </div>
+          </>) : (
+          <p className='login-signup'>
+            <Link to='/login'>Login</Link> or <Link to='/signup'>Sign up</Link> to Continue
+          </p>
+        )}
     </div>
   );
 }

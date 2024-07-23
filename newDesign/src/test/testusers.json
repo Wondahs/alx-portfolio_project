@@ -5,8 +5,14 @@
       "name": "Alice Johnson",
       "email": "alice.johnson@example.com",
       "password": "password123",
-      "postedJobs": ["101", "102"],
-      "appliedJobs": ["201", "202"],
+      "postedJobs": [
+        "101",
+        "102"
+      ],
+      "appliedJobs": [
+        "201",
+        "202"
+      ],
       "createdAt": "2024-01-01T10:00:00Z",
       "updatedAt": "2024-06-01T10:00:00Z"
     },
@@ -15,8 +21,14 @@
       "name": "Bob Smith",
       "email": "bob.smith@example.com",
       "password": "password123",
-      "postedJobs": ["103"],
-      "appliedJobs": ["203", "204", "205"],
+      "postedJobs": [
+        "103"
+      ],
+      "appliedJobs": [
+        "203",
+        "204",
+        "205"
+      ],
       "createdAt": "2024-01-02T11:00:00Z",
       "updatedAt": "2024-06-02T11:00:00Z"
     },
@@ -25,8 +37,14 @@
       "name": "Carol White",
       "email": "carol.white@example.com",
       "password": "password123",
-      "postedJobs": ["104", "105", "106"],
-      "appliedJobs": ["206"],
+      "postedJobs": [
+        "104",
+        "105",
+        "106"
+      ],
+      "appliedJobs": [
+        "206"
+      ],
       "createdAt": "2024-01-03T12:00:00Z",
       "updatedAt": "2024-06-03T12:00:00Z"
     },
@@ -36,7 +54,10 @@
       "email": "david.brown@example.com",
       "password": "password123",
       "postedJobs": [],
-      "appliedJobs": ["207", "208"],
+      "appliedJobs": [
+        "207",
+        "208"
+      ],
       "createdAt": "2024-01-04T13:00:00Z",
       "updatedAt": "2024-06-04T13:00:00Z"
     },
@@ -45,8 +66,14 @@
       "name": "Eva Green",
       "email": "eva.green@example.com",
       "password": "password123",
-      "postedJobs": ["107"],
-      "appliedJobs": ["209", "210", "211"],
+      "postedJobs": [
+        "107"
+      ],
+      "appliedJobs": [
+        "209",
+        "210",
+        "211"
+      ],
       "createdAt": "2024-01-05T14:00:00Z",
       "updatedAt": "2024-06-05T14:00:00Z"
     },
@@ -55,7 +82,10 @@
       "name": "Frank Black",
       "email": "frank.black@example.com",
       "password": "password123",
-      "postedJobs": ["108", "109"],
+      "postedJobs": [
+        "108",
+        "109"
+      ],
       "appliedJobs": [],
       "createdAt": "2024-01-06T15:00:00Z",
       "updatedAt": "2024-06-06T15:00:00Z"
@@ -66,7 +96,11 @@
       "email": "grace.gray@example.com",
       "password": "password123",
       "postedJobs": [],
-      "appliedJobs": ["212", "213"],
+      "appliedJobs": [
+        "eHpNVmFtOG5kYUZvaGgwQkFBQUFBQSUzRCUzRCUzQldlYiUyMERldmVsb3BlciUyMFVuaXRlZCUyMFN0YXRlcyUyMCUyMCUzQg==",
+        "Z29zRlU0TnpfUmp1RmU1Q0FBQUFBQSUzRCUzRCUzQldlYiUyMERldmVsb3BlciUyMFVuaXRlZCUyMFN0YXRlcyUyMCUyMCUzQg==",
+        "d2hJZWYzV0kzRnZDWVpsUUFBQUFBQSUzRCUzRCUzQldlYiUyMERldmVsb3BlciUyMFVuaXRlZCUyMFN0YXRlcyUyMCUyMCUzQg=="
+      ],
       "createdAt": "2024-01-07T16:00:00Z",
       "updatedAt": "2024-06-07T16:00:00Z"
     },
@@ -75,8 +109,14 @@
       "name": "Henry Blue",
       "email": "henry.blue@example.com",
       "password": "password123",
-      "postedJobs": ["110"],
-      "appliedJobs": ["214", "215", "216"],
+      "postedJobs": [
+        "110"
+      ],
+      "appliedJobs": [
+        "214",
+        "215",
+        "216"
+      ],
       "createdAt": "2024-01-08T17:00:00Z",
       "updatedAt": "2024-06-08T17:00:00Z"
     },
@@ -85,7 +125,10 @@
       "name": "Ivy Gold",
       "email": "ivy.gold@example.com",
       "password": "password123",
-      "postedJobs": ["111", "112"],
+      "postedJobs": [
+        "111",
+        "112"
+      ],
       "appliedJobs": [],
       "createdAt": "2024-01-09T18:00:00Z",
       "updatedAt": "2024-06-09T18:00:00Z"
@@ -96,9 +139,46 @@
       "email": "jack.silver@example.com",
       "password": "password123",
       "postedJobs": [],
-      "appliedJobs": ["217", "218"],
+      "appliedJobs": [
+        "217",
+        "218"
+      ],
       "createdAt": "2024-01-10T19:00:00Z",
       "updatedAt": "2024-06-10T19:00:00Z"
+    },
+    {
+      "id": {},
+      "name": "Victor Wonders",
+      "email": "James@gmail.com",
+      "password": "mike",
+      "postedJobs": [],
+      "appliedJobs": [],
+      "createdAt": "2024-07-23T05:50:12.955Z",
+      "updatedAt": "2024-07-23T05:50:13.016Z"
+    },
+    {
+      "id": {},
+      "name": "Mike Sam",
+      "email": "mike@sam.com",
+      "password": "sam",
+      "postedJobs": [],
+      "appliedJobs": [],
+      "createdAt": "2024-07-23T05:53:07.279Z",
+      "updatedAt": "2024-07-23T05:53:07.279Z"
+    },
+    {
+      "id": "9dfb863d-11bc-48f2-97aa-f461ac358bc6",
+      "name": "James John",
+      "email": "james@john.com",
+      "password": "john",
+      "postedJobs": [],
+      "appliedJobs": [
+        "d2hJZWYzV0kzRnZDWVpsUUFBQUFBQSUzRCUzRCUzQldlYiUyMERldmVsb3BlciUyMFVuaXRlZCUyMFN0YXRlcyUyMCUyMCUzQg==",
+        "1",
+        "d01MaGJpbWhDR2FKYUViV0FBQUFBQSUzRCUzRCUzQldlYiUyMERldmVsb3BlciUyMFVuaXRlZCUyMFN0YXRlcyUyMCUyMCUzQg=="
+      ],
+      "createdAt": "2024-07-23T06:08:57.957Z",
+      "updatedAt": "2024-07-23T06:59:36.197Z"
     }
   ]
 }

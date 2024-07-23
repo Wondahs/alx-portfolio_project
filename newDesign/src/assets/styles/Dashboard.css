@@ -1,8 +1,116 @@
+:root {
+    --primary-color: #070828;
+    --secondary-color: #b2b1ff;
+    --cta-color: #8c8aff;
+  }
+  
+
 .dashboard-content * {
-    color: black;
+    color: var(--primary-color);
 }
 
 .dashboard-content {
-    padding: 30px 10%;
-    margin: 20px auto;
+    background-color: #f2f7ed;
+    padding: 20px 10%;
+    margin: 0;
+}
+
+.dashboard-content h1 {
+    margin: 0;
+}
+
+.dashboard-content ul {
+    margin-bottom: 0;
+}
+
+.welcome-back {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-right: auto;
+    opacity: .9;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.applications,
+.recent-applications {
+    text-align: left;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .2);
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.applications *, .recent-applications * {
+    margin: 0;
+}
+
+.applications h3, .recent-applications h3 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    font-weight: 800;
+}
+
+.applications h4 {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.applications p {
+    opacity: .6;
+}
+
+.recent-applications ul {
+    text-decoration: none;
+    padding: 0;
+}
+
+.recent-applications li {
+    padding: 5px;
+    margin-bottom: 10px;
+    transition: transform .3s ease;
+}
+
+.recent-applications li:hover {
+    border-bottom: .2px solid var(--cta-color);
+    transform: scale(1.01);
+}
+
+.recent-applications .title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.recent-applications .company {
+    font-weight: 500;
+    opacity: .6;
+}
+
+.dashboard-content button {
+    padding: 10px 15px;
+    color: white;
+    font-weight: 700;
+    background-color: var(--cta-color);
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.dashboard-content button:hover {
+    opacity: .8;
+}
+
+.welcome-logout {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.welcome-logout button {
+    background-color: #b6b8b5;
+    padding: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
 }

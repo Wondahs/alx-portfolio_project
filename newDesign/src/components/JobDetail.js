@@ -5,7 +5,7 @@ import '../assets/styles/JobDetail.css'
 import { useEffect } from "react";
 import Loader from "./Loader";
 
-const JobDetail = ({ title }) => {
+const JobDetail = ({ title, userData }) => {
 
   useEffect(() => {
     document.title = title;
@@ -25,7 +25,7 @@ const JobDetail = ({ title }) => {
       <button onClick={handleGoBack}>&#8592; Go Back</button>
       {isPending && <Loader className="loading-div"></Loader>}
       {error && <p>Error Loading Job Details</p>}
-      {jobs && <JobCard job={jobs} detail={true} location={'detail'} />}
+      {jobs && <JobCard userData={userData} job={jobs} detail={true} location={'detail'} />}
     </div>
   );
 }

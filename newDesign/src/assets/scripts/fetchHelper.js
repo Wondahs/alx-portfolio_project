@@ -13,12 +13,13 @@ export default class FetchHelper {
  * @throws {Error} - If the registration request fails.
  */
   static async registerUser(url, user) {
+    const id = uuidv4();
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         ...user,
-        id: new uuidv4(),
+        id,
         postedJobs: [],
         appliedJobs: [],
         createdAt: new Date().toISOString(),
@@ -120,8 +121,10 @@ export default class FetchHelper {
  * @throws {Error} - If the PUT request fails.
  */
   static async applyJob(url, user, jobId) {
-    user.appliedJobs.push(jobId);
-    await this.updateUser(url, user);
+    if (!user.appliedJobs.includes(jobId)) {
+      user.appliedJobs.push(jobId);
+      return await this.updateUser(url, user);
+    }
   }
 
   /**
@@ -157,5 +160,26 @@ export default class FetchHelper {
 
     if (user) return user;
     else throw new Error('Invalid email or password');
+  }
+
+  /**
+ * Fetches data for multiple items from the specified URL by appending each item's ID to the URL.
+ *
+ * @param {string} url - The base URL to send the GET requests to.
+ * @param {string[]} itemArray - An array of item IDs to fetch data for.
+ * @returns {Promise<object[]>} - A promise that resolves to an array of item data.
+ * If any of the GET requests fail, the promise will reject with an error.
+ * If all requests are successful, the promise will resolve with an array of item data.
+ * If any request fails, the function will log an error message and return null.
+ */
+  static async fetchItemsData(url, itemArray) {
+    try {
+      const promiseData = itemArray.map(id => FetchHelper.getData(`${url}/${id}`));
+      const itemData = await Promise.all(promiseData);
+      return itemData;
+    } catch (error) {
+      console.log('Failed to fetch jobs:', error);
+      return null;
+    }
   }
 }

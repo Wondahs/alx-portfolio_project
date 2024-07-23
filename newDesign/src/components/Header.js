@@ -5,16 +5,16 @@ import useNavControl from "../assets/scripts/nav-control";
 import openNav from "../assets/images/nav-button.svg";
 import closeNav from "../assets/images/close-nav-icon.svg";
 
-const Header = () => {
+const Header = ({ loggedIn }) => {
 
-  useNavControl(openNav, closeNav);
+  useNavControl(openNav, closeNav, loggedIn);
   return (
     <header className="header">
       <h1 id="company-name">Job Sync</h1>
-      <Navbar />
-      <Link className="get-started" to="/signup">
+      <Navbar loggedIn={loggedIn} />
+      {!loggedIn && <Link className="get-started" to="/signup">
         <button id="get-started-cta">Get Started</button>
-      </Link>
+      </Link>}
       <img
         id="nav-button"
         src={navButton}
