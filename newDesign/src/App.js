@@ -51,7 +51,7 @@ function App() {
               - The JobDetail component is rendered with the title "JobSync - Job Detail"
           */}
           <Route path="/jobs/:id" element={<JobDetail title="JobSync - Job Detail" />} />
-          <Route path="/dashboard" element={<Dashboard tltle="Dashboard" loggedIn={loggedIn} userData={userData} />} />
+          <Route path="/dashboard" element={<Dashboard title="Dashboard" loggedIn={loggedIn} userData={userData} />} />
           <Route path="*" element={<Notfound title="Not Found" />} />
         </Routes>
 

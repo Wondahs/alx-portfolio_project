@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "password123",
+      "postedJobs": ["101", "102"],
+      "appliedJobs": ["201", "202"],
+      "createdAt": "2024-01-01T10:00:00Z",
+      "updatedAt": "2024-06-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "password": "password123",
+      "postedJobs": ["103"],
+      "appliedJobs": ["203", "204", "205"],
+      "createdAt": "2024-01-02T11:00:00Z",
+      "updatedAt": "2024-06-02T11:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Carol White",
+      "email": "carol.white@example.com",
+      "password": "password123",
+      "postedJobs": ["104", "105", "106"],
+      "appliedJobs": ["206"],
+      "createdAt": "2024-01-03T12:00:00Z",
+      "updatedAt": "2024-06-03T12:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "David Brown",
+      "email": "david.brown@example.com",
+      "password": "password123",
+      "postedJobs": [],
+      "appliedJobs": ["207", "208"],
+      "createdAt": "2024-01-04T13:00:00Z",
+      "updatedAt": "2024-06-04T13:00:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Eva Green",
+      "email": "eva.green@example.com",
+      "password": "password123",
+      "postedJobs": ["107"],
+      "appliedJobs": ["209", "210", "211"],
+      "createdAt": "2024-01-05T14:00:00Z",
+      "updatedAt": "2024-06-05T14:00:00Z"
+    },
+    {
+      "id": "6",
+      "name": "Frank Black",
+      "email": "frank.black@example.com",
+      "password": "password123",
+      "postedJobs": ["108", "109"],
+      "appliedJobs": [],
+      "createdAt": "2024-01-06T15:00:00Z",
+      "updatedAt": "2024-06-06T15:00:00Z"
+    },
+    {
+      "id": "7",
+      "name": "Grace Gray",
+      "email": "grace.gray@example.com",
+      "password": "password123",
+      "postedJobs": [],
+      "appliedJobs": ["212", "213"],
+      "createdAt": "2024-01-07T16:00:00Z",
+      "updatedAt": "2024-06-07T16:00:00Z"
+    },
+    {
+      "id": "8",
+      "name": "Henry Blue",
+      "email": "henry.blue@example.com",
+      "password": "password123",
+      "postedJobs": ["110"],
+      "appliedJobs": ["214", "215", "216"],
+      "createdAt": "2024-01-08T17:00:00Z",
+      "updatedAt": "2024-06-08T17:00:00Z"
+    },
+    {
+      "id": "9",
+      "name": "Ivy Gold",
+      "email": "ivy.gold@example.com",
+      "password": "password123",
+      "postedJobs": ["111", "112"],
+      "appliedJobs": [],
+      "createdAt": "2024-01-09T18:00:00Z",
+      "updatedAt": "2024-06-09T18:00:00Z"
+    },
+    {
+      "id": "10",
+      "name": "Jack Silver",
+      "email": "jack.silver@example.com",
+      "password": "password123",
+      "postedJobs": [],
+      "appliedJobs": ["217", "218"],
+      "createdAt": "2024-01-10T19:00:00Z",
+      "updatedAt": "2024-06-10T19:00:00Z"
+    }
+  ]
+}

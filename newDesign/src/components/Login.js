@@ -3,6 +3,7 @@ import "../assets/styles/login.css";
 import { useEffect, useState } from "react";
 import Popup from "./Popup";
 import Loader from "./Loader";
+import FetchHelper from "../assets/scripts/fetchHelper";
 
 const Login = ({ title, setUserData, setLoggedIn }) => {
   const navigate = useNavigate();
@@ -40,15 +41,17 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
     const postUrl = 'http://127.0.0.1:5000/api/auth/register';
 
     try {
-      const response = await fetch(postUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData),
-      })
+      // const response = await fetch(postUrl, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify(formData),
+      // })
 
-      if (response.ok) {
+      const userData = await FetchHelper.registerUser(postUrl, formData);
+
+      if (userData) {
         console.log('New User Created Successfully');
         setPopupMsg(
           <>
@@ -61,12 +64,12 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
 
       } else {
         console.error("Failed to create user");
-        const error = await response.json();
-        console.log(error.msg);
+        // const error = await response.json();
+        // console.log(error.msg);
         setPopupMsg(
           <>
             <h1>Error Creating Account</h1>
-            <p>{error.msg}</p>
+            {/* <p>{error.msg}</p> */}
             <button onClick={() => closePopup()}>Close</button>
           </>);
       }
@@ -99,39 +102,44 @@ const Login = ({ title, setUserData, setLoggedIn }) => {
     setIsPopupOpen(true);
 
     try {
-      const formData = { email, password };
-      const getUrl = 'http://127.0.0.1:5000/api/auth/login';
+      // const formData = { email, password };
+      // const getUrl = 'http://127.0.0.1:5000/api/auth/login';
 
-      const response = await fetch(getUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData),
-      })
+      // const response = await fetch(getUrl, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify(formData),
+      // })
 
-      if (response.ok) {
-        const data = await response.json();
-        setUserData(data);
+      const userData = await FetchHelper.Login('http://localhost:8000/users', email, password);
+
+      if (userData) {
+        // const data = await response.json();
+        setUserData(userData);
         setLoggedIn(true);
+        console.log("Logged In")
         navigate('/dashboard');
+        setIsPopupOpen(false)
       } else {
         console.error("Failed to login user");
-        const error = await response.json();
-        console.log(error.msg);
-        setPopupMsg(
-          <>
-            <h1>Login Unsuccessful</h1>
-            <p>{error.msg}</p>
-            <button onClick={() => closePopup()}>Close</button>
-          </>
-        )
-        setEmailError(error.msg);
-        setIsPopupOpen(true);
+        // const error = await response.json();
+        // console.log(error.msg);
+        // setPopupMsg(
+        //   <>
+        //     <h1>Login Unsuccessful</h1>
+        //     <p>{error.msg}</p>
+        //     <button onClick={() => closePopup()}>Close</button>
+        //   </>
+        // )
+        // setEmailError(error.msg);
+        setIsPopupOpen(false);
       }
 
     } catch (error) {
       console.log(error)
+      setIsPopupOpen(false);
     }
   }
 
