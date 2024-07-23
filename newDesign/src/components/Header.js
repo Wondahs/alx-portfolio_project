@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import useNavControl from "../assets/scripts/nav-control";
 import openNav from "../assets/images/nav-button.svg";
 import closeNav from "../assets/images/close-nav-icon.svg";
-import logo from '../assets/images/favicon.svg';
 
 const Header = ({ loggedIn }) => {
 

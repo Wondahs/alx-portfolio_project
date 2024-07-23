@@ -43,6 +43,7 @@ section.jobs-company-candidates p {
 
 section.jobs-company-candidates .potential h2 {
     font-size: 40px;
+    margin-top: 0;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
 }
 
@@ -110,6 +111,7 @@ section.who-we-are h3 {
     font-size: 35px;
     text-align: left;
     margin: 0;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
 }
 
 section.who-we-are button {
@@ -182,17 +184,21 @@ section.latest-featured-jobs h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
-    background-color: white;
+    padding: 20px 30px;
+    background: var(--main-background-gradient);
+    color: white;
     border-radius: 10px;
     text-align: left;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
 }
 
+.job-card-home p {
+    opacity: 1;
+}
+
 .job-card-home:hover {
     transition: ease .5s;
     width: 35%;
-    color: var(--primary-color);
   }
 
 .featured-jobs-home .logo-and-name {
@@ -200,10 +206,13 @@ section.latest-featured-jobs h3 {
     flex-direction: row;
     text-align: left;
     align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
 }
 
 .featured-jobs-home p {
     text-align: justify;
+    opacity: 1;
 }
 
 .featured-jobs-home .logo-and-name img {
@@ -222,10 +231,11 @@ section.latest-featured-jobs h3 {
     margin-bottom: 2px;
 }
 
-.job-title {
+.job-title-home {
     margin-top: 20px;
+    font-weight: 800s;
     margin-bottom: 0;
-    color: var(--cta-color);
+    color: white;
     opacity: 1;
     font-weight: bold;
 }
@@ -233,6 +243,7 @@ section.latest-featured-jobs h3 {
 .job-salary {
     opacity: 1;
     font-weight: bold;
+    color: white;
     margin: 0;
 }
 
@@ -245,6 +256,12 @@ section.latest-featured-jobs h3 {
     justify-content: center;
 }
 
+.job-description-home {
+    opacity: .8;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+}
+
 .job-skills span {
     background-color: var(--tetiary-color);
     border-radius: 5px;
@@ -253,12 +270,13 @@ section.latest-featured-jobs h3 {
 }
 
 .job-skills span p {
-    opacity: .5;
+    opacity: 1;
+    color: var(--cta-color);
     margin: 0;
 }
 
 .browse-more {
-    margin: 50px;
+    margin: 20px;
 }
 
 .browse-more-cta {
@@ -290,8 +308,10 @@ section.contact-us {
 }
 
 .contact-us h3 {
+    text-align: left;
     font-size: 45px;
     margin: 0;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
 }
 
 .contact-us .contacts {
@@ -369,6 +389,13 @@ section.contact-us {
 
     .contact-us h3 {
         font-size: 35px;
+        position: relative;
+        text-align: center;
+    }
+
+    section.who-we-are h3 {
+        position: relative;
+        text-align: center;
     }
 
     .contact-us .contacts {

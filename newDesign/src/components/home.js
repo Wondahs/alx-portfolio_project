@@ -104,10 +104,10 @@ const Home = ({title}) => {
               </div>
             </div>
             <div className="title-and-salary">
-              <p className="job-title">Software developer - Full Stack</p>
+              <p className="job-title-home">Software developer - Full Stack</p>
               <p className="job-salary">Salary: $80,000 per year</p>
             </div>
-            <div className="job-description">
+            <div className="job-description-home">
               <p>We're seeking a talented Full Stack Developer to join our dynamic team. The ideal candidate
                 will have experience in both front-end and back-end development, with a passion for creating
                 robust, scalable web applications. You'll work on cutting-edge projects and collaborate with
@@ -134,10 +134,10 @@ const Home = ({title}) => {
               </div>
             </div>
             <div className="title-and-salary">
-              <p className="job-title">Data Analyst</p>
+              <p className="job-title-home">Data Analyst</p>
               <p className="job-salary">Salary: $75,000 per year</p>
             </div>
-            <div className="job-description">
+            <div className="job-description-home">
               <p>DataWise Analytics is looking for a skilled Data Analyst to help interpret complex data sets
                 and provide actionable insights. You'll work closely with our business intelligence team to
                 drive data-driven decision-making across the organization.</p>
@@ -163,10 +163,10 @@ const Home = ({title}) => {
               </div>
             </div>
             <div className="title-and-salary">
-              <p className="job-title">UI/UX Designer</p>
+              <p className="job-title-home">UI/UX Designer</p>
               <p className="job-salary">Salary: $85,000 per year</p>
             </div>
-            <div className="job-description">
+            <div className="job-description-home">
               <p>Join our innovative design team at Creative Pulse Interactive. We're seeking a UX/UI Designer
                 with a keen eye for detail and a user-centered approach. You'll be responsible for creating
                 intuitive, visually appealing interfaces for web and mobile applications.</p>
@@ -195,7 +195,7 @@ const Home = ({title}) => {
       <section className="contact-us">
         <div className="cta-text">
           <p>CONTACT US</p>
-          <h3>Take Action Now<br /> With JobSync!</h3>
+          <h3>Take Action Now With JobSync!</h3>
           <p> With JobSync, you're not just finding a job – you're taking the next step in your career journey.
             Start exploring today and discover the role that will help you reach your full professional
             potential.</p>
