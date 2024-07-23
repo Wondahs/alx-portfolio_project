@@ -75,7 +75,7 @@ We have identified several challenges that we aim to address throughout the deve
 
 1. User Adoption and Engagement: Ensuring high user engagement and adoption rates to sustain platform growth and effectiveness.
 2. Scalability and Performance: Maintaining optimal performance and quick response times, even during high-traffic periods.
-3. **Data Security and Privacy**: Implementing robust measures to protect sensitive user data and maintain user trust.
+3. Data Security and Privacy: Implementing robust measures to protect sensitive user data and maintain user trust.
 4. **Content Quality**: Establishing mechanisms to ensure and maintain high-quality job postings.
 
 ## Project Timeline
