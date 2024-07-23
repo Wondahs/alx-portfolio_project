@@ -21,10 +21,13 @@
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 0;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+
 }
 
 .hero svg {
     margin: 0 auto;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .3));
 }
 
 .hero p {
@@ -39,7 +42,7 @@
 
 .team {
     margin: 0;
-    background-color: #EBEDF0;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
     padding: 5px auto;
 }
 
@@ -47,6 +50,7 @@
     color: var(--primary-color);
     font-size: 40px;
     font-weight: 700;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
 }
 
 .team-member-card {

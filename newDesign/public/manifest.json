@@ -1,15 +1,22 @@
 {
   "short_name": "Job Sync",
   "name": "Job Sync: Unlock Your Potential",
+  "description": "Discover and apply to job listings tailored to your skills and aspirations",
   "icons": [
     {
       "src": "favicon.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#070828;",
-  "background_color": "#ffffff"
+  "theme_color": "#6223C3",
+  "background_color": "#ffffff",
+  "orientation": "any",
+  "categories": ["business", "productivity", "utilities"],
+  "scope": "/",
+  "lang": "en-US",
+  "prefer_related_applications": false
 }

@@ -21,7 +21,7 @@ const Footer = () => {
             <Link to="/"><img src={facebookIcon} alt="Facebook Icon"/></Link>
             <Link to="/"><img src={twitterIcon} alt="Twitter Icon"/></Link>
             <Link to="/"><img src={instagramIcon} alt="Instagram Icon"/></Link>
-            <Link to="/"><img src={githubIcon} alt="Github Icon"/></Link>
+            <Link to="https://github.com/Wondahs/alx-portfolio_project"><img src={githubIcon} alt="Github Icon"/></Link>
           </div>
         </div>
         <div className="contact">

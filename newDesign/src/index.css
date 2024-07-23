@@ -3,13 +3,21 @@
 :root {
   --primary-color: #070828;
   --secondary-color: #b2b1ff;
-  --cta-color: #6027C6;
+  --cta-color: #6223c3;
 }
 
 :root {
-  --main-background-gradient: linear-gradient(107deg, rgba(99,34,195,1) 0%, rgba(45,136,253,1) 100%);
-  --main-background-color: rgb(99,34,195);
-  --secondary-background: linear-gradient(107deg, rgba(49,0,145,1) 0%, rgba(0,86,203,1) 100%);
+  --main-background-gradient: linear-gradient(
+    107deg,
+    rgba(99, 34, 195, 1) 0%,
+    rgba(45, 136, 253, 1) 100%
+  );
+  --main-background-color: rgb(99, 34, 195);
+  --secondary-background: linear-gradient(
+    107deg,
+    rgba(49, 0, 145, 1) 0%,
+    rgba(0, 86, 203, 1) 100%
+  );
 }
 
 body {
@@ -18,6 +26,7 @@ body {
   margin: 0;
   font-size: smaller;
   font-weight: 600;
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
 
 a {
@@ -46,6 +55,7 @@ header {
   flex-direction: row;
   align-items: center;
   padding: 10px 10%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
 }
 
 header nav {
@@ -62,29 +72,68 @@ header nav ul li {
   padding: 10px 5px;
   color: white;
   list-style: none;
+  position: relative;
   font-weight: bolder;
+  margin-right: 10px;
+  transition: all .3s ease;
+}
+
+header nav ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+header nav ul li:hover::after {
+  width: 100%;
+}
+
+header nav ul li:hover {
+  transform: scale(1.1);
 }
 
 header h1 {
   font-size: 30px;
   margin-right: auto;
-  font-weight: 800;
+  margin-left: 0;
+  color: white;
+  font-weight: 900;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+}
+
+header h1 img {
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .3));
+}
+
+header h1 a {
+  color: white;
 }
 
 header a.get-started {
-  background-color: var(--cta-color);
+  background: var(--main-background-gradient);
   color: white;
   margin-left: auto;
   margin-left: 0;
   padding: 15px;
   border-radius: 10px;
+  border: 2px white solid;
+  transition: all .3s ease;
+}
+
+header a.get-started:hover {
+  transform: scale(1.1);
 }
 
 header button {
-  background-color: transparent;
   border: none;
+  background: transparent;
+  font-weight: 1000;
   color: white;
-  font-weight: bolder;
 }
 
 .nav-button {
@@ -103,6 +152,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 0 5%;
+  box-shadow: 1px 20px 20px 10px rgba(0, 0, 0, .3);
 }
 
 footer a {
@@ -119,7 +169,7 @@ footer p {
 }
 
 footer .logo-address-nav-help {
-  border-bottom: 1px solid rgb(156, 150, 150);
+  border-bottom: 1px solid white;
   display: flex;
   flex-direction: row;
   padding: 30px 5%;
@@ -129,6 +179,12 @@ footer .logo-and-name {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+footer p,
+footer a {
+  color: white;
+  opacity: 0.9;
 }
 
 footer .logo-address-nav-help h4 {
@@ -181,7 +237,7 @@ footer h4 {
   }
   header nav {
     display: none;
-    background-color: var(--primary-color);
+    background: var(--main-background-gradient);
     position: absolute;
     width: 100%;
     top: 50%;
