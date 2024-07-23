@@ -16,6 +16,7 @@
         "test": "mocha"
     },
     "dependencies": {
+        "@mailchimp/mailchimp_transactional": "^1.0.59",
         "axios": "^1.7.2",
         "bcrypt": "^5.0.1",
         "bcryptjs": "^2.4.3",

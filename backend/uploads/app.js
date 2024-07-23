@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const passport = require('passport');
@@ -29,8 +28,8 @@ app.use(cors());
 /* Session configuration */
 app.use(session({
   secret: process.env.SESSION_SECRET,
-  resave: false, /* Only save sessions if modified */
-  saveUninitialized: false, /* Don't save uninitialized sessions */
+  resave: false,
+  saveUninitialized: false,
   store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
   cookie: {
     secure: process.env.NODE_ENV === 'production',
@@ -44,8 +43,8 @@ app.use(passport.session());
 
 /* Apply rate limiting */
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, /* 15 minutes */
-  max: 100 /* limit each IP to 100 requests per windowMs */
+  windowMs: 15 * 60 * 1000,
+  max: 100
 });
 app.use(limiter);
 
@@ -65,5 +64,5 @@ app.use('/api/jobs', jobRoutes);
 app.use(errorHandler);
 
 /* Start the server */
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => logger.info(`Server running on port ${PORT}`));

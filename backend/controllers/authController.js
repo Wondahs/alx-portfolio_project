@@ -2,10 +2,9 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
-const nodemailer = require('nodemailer');
 const User = require('../models/User.js');
 const Token = require('../models/Token.js');
-const sendEmail = require('../utils/sendEmail');
+const sendEmail = require('../utils/sendEmail.js');
 
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
@@ -19,9 +18,12 @@ exports.register = async (req, res) => {
         user.password = await bcrypt.hash(password, salt);
         await user.save();
         const payload = { user: { id: user.id } };
-        jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 360000 }, (err, token) => {
+        jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 360000 }, async (err, token) => {
             if (err) throw err;
             res.json({ token });
+
+            /* Send welcome email */
+            await sendEmail(user.email, 'Welcome to JobSync', 'Thank you for registering!');
         });
     } catch (err) {
         console.error(err.message);
@@ -75,7 +77,6 @@ exports.emailAuthRedirect = (req, res) => {
     res.redirect('/dashboard');
 };
 
-/* Initiate password reset */
 exports.forgotPassword = async (req, res) => {
     const { email } = req.body;
     try {
@@ -90,11 +91,7 @@ exports.forgotPassword = async (req, res) => {
         const resetUrl = `${req.protocol}://${req.get('host')}/resetpassword/${resetToken}`;
         const message = `You are receiving this email because you (or someone else) has requested the reset of a password. Please make a PUT request to: \n\n ${resetUrl}`;
         try {
-            await sendEmail({
-                email: user.email,
-                subject: 'Password reset token',
-                message,
-            });
+            await sendEmail(user.email, 'Password reset token', message);
             res.status(200).json({ msg: 'Email sent' });
         } catch (err) {
             console.error(err);
@@ -109,7 +106,6 @@ exports.forgotPassword = async (req, res) => {
     }
 };
 
-/* Initiate password reset (alternative method) */
 exports.initiateResetPassword = async (req, res) => {
     const { email } = req.body;
     try {
@@ -131,7 +127,6 @@ exports.initiateResetPassword = async (req, res) => {
     }
 };
 
-/* Complete password reset */
 exports.completeResetPassword = async (req, res) => {
     const { token, password } = req.body;
     try {
