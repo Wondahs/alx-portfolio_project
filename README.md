@@ -95,7 +95,7 @@ Our development process spans 27 days, divided into four weeks:
 ### Week 3
 - Integrate frontend and backend
 - Conduct testing (unit and integration tests)
-- Deploy application on Google WCP, Heroku
+- Deploy application on Google GCP, Heroku.
 
 ### Week 4
 - Perform user testing and gather feedback
