@@ -122,7 +122,7 @@ We welcome contributions to the JobSync project. Please read our contributing gu
 
 Create an account (no blood sacrifice required)
 Craft your profile - make it pop!
-Browse jobs or post openings
+Browse jobs or post openings, make a choice
 Apply, hire, and change the world!
 
 #🤝 Join the JobSync Revolution
