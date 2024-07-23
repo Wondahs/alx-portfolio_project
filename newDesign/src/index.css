@@ -3,7 +3,13 @@
 :root {
   --primary-color: #070828;
   --secondary-color: #b2b1ff;
-  --cta-color: #8c8aff;
+  --cta-color: #6027C6;
+}
+
+:root {
+  --main-background-gradient: linear-gradient(107deg, rgba(99,34,195,1) 0%, rgba(45,136,253,1) 100%);
+  --main-background-color: rgb(99,34,195);
+  --secondary-background: linear-gradient(107deg, rgba(49,0,145,1) 0%, rgba(0,86,203,1) 100%);
 }
 
 body {
@@ -28,7 +34,13 @@ li {
 }
 
 header {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background: rgb(99, 34, 195);
+  background: linear-gradient(
+    107deg,
+    rgba(99, 34, 195, 1) 0%,
+    rgba(45, 136, 253, 1) 100%
+  );
   color: white;
   display: flex;
   flex-direction: row;
@@ -80,7 +92,13 @@ header button {
 }
 
 footer {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background: rgb(99, 34, 195);
+  background: linear-gradient(
+    107deg,
+    rgba(99, 34, 195, 1) 0%,
+    rgba(45, 136, 253, 1) 100%
+  );
   color: white;
   display: flex;
   flex-direction: column;
@@ -231,7 +249,7 @@ footer h4 {
   .contact {
     margin-top: 0;
   }
-  
+
   .contact h4 {
     margin-top: 20px;
   }
