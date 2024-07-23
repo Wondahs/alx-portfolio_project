@@ -66,7 +66,7 @@ Through the development of JobSync, our team aims to:
 ## Third-Party Services
 
 - **Authentication**: Auth0
-- **Hosting**: Google WCP, Heroku
+- **Hosting**: Google GCP, Heroku
 - **Analytics**: Google Analytics
 
 ## Challenges
