@@ -66,7 +66,7 @@ Through the development of JobSync, our team aims to:
 ## Third-Party Services
 
 - **Authentication**: Auth0
-- **Hosting**: Google WCP, Heroku
+- **Hosting**: Google GCP, Heroku
 - **Analytics**: Google Analytics
 
 ## Challenges
@@ -95,7 +95,7 @@ Our development process spans 27 days, divided into four weeks:
 ### Week 3
 - Integrate frontend and backend
 - Conduct testing (unit and integration tests)
-- Deploy application on Google WCP, Heroku
+- Deploy application on Google GCP, Heroku.
 
 ### Week 4
 - Perform user testing and gather feedback
@@ -122,7 +122,7 @@ We welcome contributions to the JobSync project. Please read our contributing gu
 
 Create an account (no blood sacrifice required)
 Craft your profile - make it pop!
-Browse jobs or post openings
+Browse jobs or post openings, make a choice
 Apply, hire, and change the world!
 
 #🤝 Join the JobSync Revolution
