@@ -27,6 +27,7 @@
 
 .hero svg {
     margin: 0 auto;
+    min-width: 150px;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .3));
 }
 
