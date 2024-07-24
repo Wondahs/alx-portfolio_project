@@ -38,19 +38,12 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
         <Loader className="loading-div"></Loader>
       </>);
     setIsPopupOpen(true);
+
     // Create a new user
     const formData = { name, email, password };
     const postUrl = 'http://localhost:9000/users';
 
     try {
-      // const response = await fetch(postUrl, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(formData),
-      // })
-
       const userData = await FetchHelper.registerUser(postUrl, formData);
 
       if (userData) {
@@ -66,12 +59,9 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
 
       } else {
         console.error("Failed to create user");
-        // const error = await response.json();
-        // console.log(error.msg);
         setPopupMsg(
           <>
             <h1>Error Creating Account</h1>
-            {/* <p>{error.msg}</p> */}
             <button onClick={() => closePopup()}>Close</button>
           </>);
       }
@@ -105,21 +95,9 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
     setIsPopupOpen(true);
 
     try {
-      // const formData = { email, password };
-      // const getUrl = 'http://127.0.0.1:5000/api/auth/login';
-
-      // const response = await fetch(getUrl, {
-      //   method: 'POST',
-      //  headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(formData),
-      // })
-
       const userData = await FetchHelper.Login('http://localhost:9000/users', email, password);
 
       if (userData) {
-        // const data = await response.json();
         setUserData(userData);
         setLoggedIn(true);
         console.log("Logged In")
@@ -127,9 +105,6 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
         setIsPopupOpen(false)
       } else {
         console.error("Failed to login user");
-        // const error = await response.json();
-        // console.log(error.msg);
-        // setEmailError(error.msg);
         setIsPopupOpen(false);
       }
 
@@ -142,7 +117,6 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
           <button onClick={() => closePopup()}>Close</button>
         </>
       )
-      // setIsPopupOpen(false);
     }
   }
 
