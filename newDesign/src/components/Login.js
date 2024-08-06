@@ -95,7 +95,7 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
     setIsPopupOpen(true);
 
     try {
-      const userData = await FetchHelper.Login('http://localhost:9000/users', email, password);
+      const userData = await FetchHelper.Login('https://jobsync-users-server.onrender.com/users', email, password);
 
       if (userData) {
         setUserData(userData);
