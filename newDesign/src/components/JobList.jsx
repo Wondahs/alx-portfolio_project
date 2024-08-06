@@ -5,9 +5,11 @@ import useFetch from '../assets/scripts/useRead';
 import { Link } from 'react-router-dom';
 import Loader from './Loader.js';
 
+const REACT_APP_JOBS_API = process.env.REACT_APP_JOBS_API;
+
 const JobList = ({ title, loggedIn }) => {
 
-  const { data: jobs, isPending, error } = useFetch('https://jobsync-jobs-server.onrender.com/jobs');
+  const { data: jobs, isPending, error } = useFetch(REACT_APP_JOBS_API);
 
   useEffect(() => {
     document.title = title;

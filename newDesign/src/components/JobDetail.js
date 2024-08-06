@@ -5,6 +5,8 @@ import '../assets/styles/JobDetail.css'
 import { useEffect } from "react";
 import Loader from "./Loader";
 
+const REACT_APP_JOBS_API = process.env.REACT_APP_JOBS_API;
+
 const JobDetail = ({ title, userData }) => {
 
   useEffect(() => {
@@ -12,7 +14,7 @@ const JobDetail = ({ title, userData }) => {
   }, [title]);
 
   const { id } = useParams();
-  const { data: jobs, isPending, error } = useFetch('http://localhost:8000/jobs/' + id);
+  const { data: jobs, isPending, error } = useFetch(REACT_APP_JOBS_API + id);
 
 
   const navigate = useNavigate();

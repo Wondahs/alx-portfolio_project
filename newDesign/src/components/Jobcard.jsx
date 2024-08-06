@@ -2,6 +2,9 @@ import React from 'react';
 import '../assets/styles/JobCard.css';
 import { Link } from 'react-router-dom';
 import FetchHelper from '../assets/scripts/fetchHelper';
+
+const REACT_APP_USERS_API = process.env.REACT_APP_USERS_API;
+
 const JobCard = ({ job, detail, location, userData }) => {
 
   const formatDescription = (description) => {
@@ -21,7 +24,7 @@ const JobCard = ({ job, detail, location, userData }) => {
 
   const applyJob = async () => {
     try {
-      const response = await FetchHelper.applyJob('http://localhost:9000/users', userData, job.id);
+      const response = await FetchHelper.applyJob(REACT_APP_USERS_API, userData, job.id);
       response && sessionStorage.setItem('userData', response)
     } catch (error) {
       console.log(error);

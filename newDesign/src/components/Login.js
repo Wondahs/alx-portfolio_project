@@ -5,6 +5,7 @@ import Popup from "./Popup";
 import Loader from "./Loader";
 import FetchHelper from "../assets/scripts/fetchHelper";
 
+const REACT_APP_USERS_API = process.env.REACT_APP_USERS_API;
 const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
   const navigate = useNavigate();
   const location = useLocation().pathname;
@@ -41,7 +42,7 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
 
     // Create a new user
     const formData = { name, email, password };
-    const postUrl = 'https://jobsync-users-server.onrender.com/users';
+    const postUrl = REACT_APP_USERS_API;
 
     try {
       const userData = await FetchHelper.registerUser(postUrl, formData);
@@ -95,7 +96,7 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
     setIsPopupOpen(true);
 
     try {
-      const userData = await FetchHelper.Login('https://jobsync-users-server.onrender.com/users', email, password);
+      const userData = await FetchHelper.Login(REACT_APP_USERS_API, email, password);
 
       if (userData) {
         setUserData(userData);
