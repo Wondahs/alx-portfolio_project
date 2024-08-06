@@ -41,7 +41,7 @@ const Login = ({ title, setUserData, setLoggedIn, loggedIn }) => {
 
     // Create a new user
     const formData = { name, email, password };
-    const postUrl = 'http://localhost:9000/users';
+    const postUrl = 'https://jobsync-users-server.onrender.com/users';
 
     try {
       const userData = await FetchHelper.registerUser(postUrl, formData);

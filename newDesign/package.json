@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "serve": "concurrently \"HOST=0.0.0.0 PORT=10000 serve -s build",
+    "serve": "HOST=0.0.0.0 PORT=10000 serve -s build",
     "serve-jobs": "json-server src/test/testjobs.json --port 8000",
     "serve-users": "json-server src/test/testusers.json --port 9000",
     "build": "react-scripts build",

@@ -7,7 +7,7 @@ import Loader from './Loader.js';
 
 const JobList = ({ title, loggedIn }) => {
 
-  const { data: jobs, isPending, error } = useFetch('http://localhost:8000/jobs');
+  const { data: jobs, isPending, error } = useFetch('https://jobsync-jobs-server.onrender.com/jobs');
 
   useEffect(() => {
     document.title = title;
