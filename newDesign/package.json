@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-all": "concurrently \"npm run start --prefix .\" \"json-server src/test/testjobs.json --port 8000\" \"json-server src/test/testusers.json --port 9000\"",
+    "serve": "concurrently \"serve -s build\" \"json-server src/test/testjobs.json --port 8000\" \"json-server src/test/testusers.json --port 9000\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
