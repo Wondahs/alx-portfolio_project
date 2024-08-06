@@ -15,7 +15,6 @@
     "@testing-library/user-event": "^13.5.0",
     "express-validator": "^7.1.0",
     "g": "^2.0.1",
-    "json-server": "^1.0.0-beta.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.0",
@@ -51,6 +50,7 @@
   "devDependencies": {
     "@types/uuid": "^10.0.0",
     "concurrently": "^8.2.2",
+    "json-server": "^1.0.0-beta.1",
     "serve": "^14.2.3"
   }
 }
