@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-both": "concurrently \"npm run start --prefix .\" \"npm run start --prefix ../backend\"",
+    "start-all": "concurrently \"npm run start --prefix .\" \"json-server src/test/testjobs.json --port 8000\" \"json-server src/test/testusers.json --port 9000\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@types/uuid": "^10.0.0"
+    "@types/uuid": "^10.0.0",
+    "concurrently": "^8.2.2"
   }
 }
