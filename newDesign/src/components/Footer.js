@@ -26,9 +26,9 @@ const Footer = () => {
         </div>
         <div className="contact">
           <h4>Address</h4>
-          <p>BladeVille, Ojo, Lagos, Nigeria.</p>
+          <p>1234 Elm Street, Springfield, IL.</p>
           <h4>Contact</h4>
-          <p>+234 905 460 4494</p>
+          <p>+1-217-555-0198</p>
           <p>support@jobsync.com</p>
         </div>
         <div className="navigation">
